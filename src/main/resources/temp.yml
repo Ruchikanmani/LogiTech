@@ -1,0 +1,522 @@
+MOMOTECH_INGOT_CONSTRUCTOR:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': BRONZE_INGOT
+        tick: 0
+      '1':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': DURALUMIN_INGOT
+        tick: 0
+      '2':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': BILLON_INGOT
+        tick: 0
+      '3':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': BRASS_INGOT
+        tick: 0
+      '4':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': STEEL_INGOT
+        tick: 0
+      '5':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': CORINTHIAN_BRONZE_INGOT
+        tick: 0
+      '6':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': SYNTHETIC_DIAMOND
+        tick: 0
+      '7':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': NICKEL_INGOT
+        tick: 0
+      '8':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': COBALT_INGOT
+        tick: 0
+      '9':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': CARBONADO
+        tick: 0
+      '10':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': ALUMINUM_BRASS_INGOT
+        tick: 0
+      '11':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': SYNTHETIC_SAPPHIRE
+        tick: 0
+      '12':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': ALUMINUM_BRONZE_INGOT
+        tick: 0
+      '13':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': DAMASCUS_STEEL_INGOT
+        tick: 0
+      '14':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': HARDENED_METAL_INGOT
+        tick: 0
+      '15':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': GOLD_24K
+        tick: 0
+      '16':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': REDSTONE_ALLOY
+        tick: 0
+      '17':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': GILDED_IRON
+        tick: 0
+      '18':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': SYNTHETIC_EMERALD
+        tick: 0
+      '19':
+        input:
+          '1': MOMOTECH_METAL_STAR
+        output:
+          '1': REINFORCED_ALLOY_INGOT
+        tick: 0
+    mode: w
+    type: machine
+    energy: 0
+  MOMOTECH_PARTICLE_CONSTRUCTOR:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': BOOK
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+      '1':
+        input:
+          '1': BOOK
+        output:
+          '1': MOMOTECH_PROTON
+        tick: 0
+      '2':
+        input:
+          '1': BOOK
+        output:
+          '1': MOMOTECH_ZYGOTE
+        tick: 0
+    mode: w
+    type: machine
+  MOMOTECH_DIGITAL_GENERATOR:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': BOOK
+        output:
+          '1': MOMOTECH_DIGITAL
+        tick: 0
+    mode: w
+    type: machine
+    energy: 1
+  MOMOTECH_ETERNAL_MINING_MACHINE:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': BOOK
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+      '1':
+        input:
+          '1': MOMOTECH_EMPTY_SHELL
+        output:
+          '1': MOMOTECH_FOREVER
+        tick: 0
+    mode: w
+    type: machine
+    energy: 0
+  MOMOTECH_FINAL_INGOT_GENERATOR:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': BOOK
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 0
+  MOMOTECH_FINAL_GENERATOR:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': MOMOTECH_INFINITY
+        tick: 0
+    mode: w
+    type: machine
+  MOMOTECH_SALT_GENERATOR:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': BOOK
+        output:
+          '1': SALT
+        tick: 0
+    mode: w
+    type: machine
+    energy: 0
+  MOMOTECH_MONSTER_GENERATOR0:
+    absent: displayed
+    recipe:
+      '0':
+        
+          '1': 32BONE
+          '1': 32CARROT
+          '1': 32POTATO
+          '1': 32STRING
+          '1': 32IRON_INGOT
+          '1': 32GUNPOWDER
+          '1': 32ROTTEN_FLESH
+          '1': 32SPIDER_EYE
+          '1': 32GLOWSTONE_DUST
+          '1': 32REDSTONE
+          '1': 32STICK
+          '1': 32GLASS_BOTTLE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR1:
+    absent: displayed
+    recipe:
+      '0':
+      
+          '1': 32COD
+          '1': 32SALMON
+          '1': 32PUFFERFISH
+          '1': 32TROPICAL_FISH
+          '1': 32PRISMARINE_CRYSTALS
+          '1': 32PRISMARINE_SHARD
+          '1': 32INK_SAC
+          '1': 32GLOW_INK_SAC
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR2:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32ROTTEN_FLESH
+        tick: 0
+      '1':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32GOLD_INGOT
+        tick: 0
+      '2':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32GOLD_NUGGET
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR3:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32ENDER_EYE
+        tick: 0
+      '1':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32ENDER_PEARL
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR4:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32GUNPOWDER
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR5:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32ROTTEN_FLESH
+        tick: 0
+      '1':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32COPPER_INGOT
+        tick: 0
+      '2':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32NAUTILUS_SHELL
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR6:
+    absent: displayed
+    recipe:
+      '0':
+        
+          '1': 32BEEF
+        
+          '1': 32CHICKEN
+        
+          '1': 32MUTTON
+        
+          '1': 32LEATHER
+       
+          '1': 32FEATHER
+      
+          '1': 32WHITE_WOOL
+       
+          '1': 32PORKCHOP
+       
+      
+          '1': 32EGG
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR7:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32SLIME_BALL
+        tick: 0
+      '1':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32SLIME_BLOCK
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR8:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32BLAZE_POWDER
+        tick: 0
+      '1':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32BLAZE_ROD
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_MONSTER_GENERATOR9:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': GRAY_STAINED_GLASS_PANE
+        output:
+          '1': 32MAGMA_CREAM
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR0:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR1:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR2:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR3:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR4:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR5:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR6:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR7:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR8:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  MOMOTECH_RULE_DUST_GENERATOR9:
+    absent: displayed
+    recipe:
+      '0':
+        input:
+          '1': COBBLESTONE
+        output:
+          '1': GRAY_STAINED_GLASS_PANE
+        tick: 0
+    mode: w
+    type: machine
+    energy: 15000
+  

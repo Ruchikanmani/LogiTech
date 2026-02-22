@@ -1,0 +1,50 @@
+## CHANGE 更改此处为你的附属名称
+name: LogiTech
+
+## CHANGE 更改此处为你的名称
+author: matl114
+
+## CHANGE 这是对你插件的介绍
+description: Logical Slimefun4-Addon To Make A Better World
+
+## CHANGE 指向你的 JavaPlugin 主类
+main: me.matl114.logitech.MyAddon
+
+## 你可以更改为你的项目仓库地址，或者你的个人网站。你也可以移除此项目。
+website: https://github.com/m1919810/LogiTech
+
+## 该值将在构建时被自动替换为pom.xml中定义的版本。
+## 不要更改此项目。
+version: ${project.version}
+
+## 这是运行该附属所需的最低MC版本。
+api-version: '1.20'
+
+## 指定 Slimefun 作为依赖项，必须
+
+depend:
+- Slimefun
+- GuizhanLibPlugin
+softdepend:
+- InfinityExpansion
+- Networks
+
+commands:
+  logitech:
+    description: basic logitech command
+    aliases: lc
+    usage: 'ask the author,pls.I dont think theres a need for you to use these commands'
+
+permissions:
+  logitech.command.op:
+    description: Allows you to use operator commands
+    default: op
+  logitech.shell.root:
+    description: Allows you to open root shell without password
+    default: op
+  logitech.shell.test:
+    description: Allows you to use test operator tools
+    default: op
+  logitech.experimental.test:
+    description: Allows you to use experimental items
+    default: op

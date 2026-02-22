@@ -1,0 +1,3267 @@
+zh_CN:
+  ConfigLoader:
+    '0':
+      key: ConfigLoader.0
+      lan: '无法加载默认配置文件 '
+    enable: 1
+  Depends:
+    DependencyInfinity:
+      '0':
+        key: Depends.DependencyInfinity.0
+        lan: 已检测到无尽附属
+      enable: 1
+    DependencyNetwork:
+      '0':
+        key: Depends.DependencyNetwork.0
+        lan: 已检测到网络附属
+      '1':
+        key: Depends.DependencyNetwork.1
+        lan: 已检测到网络拓展
+      enable: 1
+    NetWorkQuantumMethod:
+      enable: 1
+    NetworksAdaptQuantumStorage:
+      enable: 1
+    NetworksAdaptTools:
+      enable: 1
+  Items:
+    CustomHead:
+      enable: 1
+  Language:
+    '0':
+      key: Language.0
+      lan: 语言文件加载完毕
+    enable: 1
+  Listeners:
+    BlockBreakListener:
+      enable: 1
+    CustomListener:
+      enable: 1
+    ListenerManager:
+      enable: 1
+    Listeners:
+      BlockMenuRedirect:
+        '0':
+          key: Listeners.Listeners.BlockMenuRedirect.0
+          lan: '&c该多方块部件并没有组成多方块机器!'
+        enable: 1
+      MilkListener:
+        enable: 1
+      PlayerInSolar:
+        enable: 1
+      PortalTeleport:
+        '0':
+          key: Listeners.Listeners.PortalTeleport.0
+          lan: '&a传送成功!'
+        '1':
+          key: Listeners.Listeners.PortalTeleport.1
+          lan: '&c目标传送门未启用,传送失败!'
+        enable: 1
+      PotionClearOnDeath:
+        enable: 1
+  MyAddon:
+    '0':
+      key: MyAddon.0
+      lan: 在加载软依赖 NETWORKS时出现错误! 出现版本不匹配的附属,禁用附属相应内容
+    '1':
+      key: MyAddon.1
+      lan: 在加载软依赖 INFINITY时出现错误! 出现版本不匹配的附属,禁用附属相应内容
+    '10':
+      key: MyAddon.10
+      lan: 附属特性注册完毕
+    '2':
+      key: MyAddon.2
+      lan: 软依赖检测完毕
+    '3':
+      key: MyAddon.3
+      lan: 物品组加载完毕
+    '4':
+      key: MyAddon.4
+      lan: 自定义物品加载完毕
+    '5':
+      key: MyAddon.5
+      lan: 物品模板加载完毕
+    '6':
+      key: MyAddon.6
+      lan: 粘液物品注册完毕
+    '7':
+      key: MyAddon.7
+      lan: 依赖注册完毕
+    '8':
+      key: MyAddon.8
+      lan: 计划线程设立完毕
+    '9':
+      key: MyAddon.9
+      lan: 监听器注册完毕
+    enable: 1
+  Schedule:
+    PersistentEffects:
+      AbstractEffect:
+        enable: 1
+      CustomEffects:
+        '0':
+          key: Schedule.PersistentEffects.CustomEffects.0
+          lan: '%s &6在超新星的烈焰中化为灰烬'
+        '1':
+          key: Schedule.PersistentEffects.CustomEffects.1
+          lan: '%s &6的身体被核辐射穿成了筛子'
+        '2':
+          key: Schedule.PersistentEffects.CustomEffects.2
+          lan: '%s &6因选错了方向而被系统制裁'
+        enable: 1
+      PlayerEffects:
+        enable: 1
+      RadiationRegion:
+        '0':
+          key: Schedule.PersistentEffects.RadiationRegion.0
+          lan: '&e警告!您已进入危险的辐射区!'
+        enable: 1
+    ScheduleAsync:
+      enable: 1
+    ScheduleEffects:
+      enable: 1
+    SchedulePostRegister:
+      enable: 1
+    ScheduleSave:
+      enable: 1
+    Schedules:
+      '0':
+        key: Schedule.Schedules.0
+        lan: 保存附属数据中
+      '1':
+        key: Schedule.Schedules.1
+        lan: 附属数据保存完成
+      enable: 1
+    Task:
+      enable: 1
+  SlimefunItem:
+    AddDepends:
+      enable: 1
+    AddGroups:
+      '0':
+        key: SlimefunItem.AddGroups.0
+        lan: 更新日志
+      '1':
+        key: SlimefunItem.AddGroups.1
+        lan: '&f更新日志'
+      '10':
+        key: SlimefunItem.AddGroups.10
+        lan: 单击此处访问Github
+      '11':
+        key: SlimefunItem.AddGroups.11
+        lan: 单击此处访问Github
+      '2':
+        key: SlimefunItem.AddGroups.2
+        lan: '&7此页为简易的更新日志'
+      '3':
+        key: SlimefunItem.AddGroups.3
+        lan: '&7你或许可以找到你想要的新特性'
+      '4':
+        key: SlimefunItem.AddGroups.4
+        lan: '&7创建日志'
+      '5':
+        key: SlimefunItem.AddGroups.5
+        lan: '&7创建新的终极机器用于测试'
+      '6':
+        key: SlimefunItem.AddGroups.6
+        lan: '&7大型配方展示组增加历史记录'
+      '7':
+        key: SlimefunItem.AddGroups.7
+        lan: '&7修复模拟合成台不显示黑名单的bug'
+      '8':
+        key: SlimefunItem.AddGroups.8
+        lan: '&7修复原版配方读取,将矿辞读为等价物品组'
+      '9':
+        key: SlimefunItem.AddGroups.9
+        lan: '&7修改部分描述'
+      enable: 1
+    AddHandlers:
+      enable: 1
+    AddItem:
+      '0':
+        key: SlimefunItem.AddItem.0
+        lan: 测试物件1
+      '1':
+        key: SlimefunItem.AddItem.1
+        lan: 只是一个简单的测试
+      '10':
+        key: SlimefunItem.AddItem.10
+        lan: 测试生成器1
+      '11':
+        key: SlimefunItem.AddItem.11
+        lan: 测测我的
+      '12':
+        key: SlimefunItem.AddItem.12
+        lan: 定向生成器1
+      '13':
+        key: SlimefunItem.AddItem.13
+        lan: 测测我的
+      '14':
+        key: SlimefunItem.AddItem.14
+        lan: 测试快捷机器
+      '15':
+        key: SlimefunItem.AddItem.15
+        lan: 强化工作台
+      '16':
+        key: SlimefunItem.AddItem.16
+        lan: 测试快捷机器
+      '17':
+        key: SlimefunItem.AddItem.17
+        lan: 多方块机器
+      '18':
+        key: SlimefunItem.AddItem.18
+        lan: 测试快捷机器
+      '19':
+        key: SlimefunItem.AddItem.19
+        lan: 击杀掉落
+      '2':
+        key: SlimefunItem.AddItem.2
+        lan: 测试机器1
+      '20':
+        key: SlimefunItem.AddItem.20
+        lan: 测试快捷机器
+      '21':
+        key: SlimefunItem.AddItem.21
+        lan: 无尽工作台
+      '22':
+        key: SlimefunItem.AddItem.22
+        lan: 测试快捷机器
+      '23':
+        key: SlimefunItem.AddItem.23
+        lan: 无尽芯片注入
+      '24':
+        key: SlimefunItem.AddItem.24
+        lan: 测试快捷机器
+      '25':
+        key: SlimefunItem.AddItem.25
+        lan: 网络工作台
+      '26':
+        key: SlimefunItem.AddItem.26
+        lan: 测试AutoCraft
+      '27':
+        key: SlimefunItem.AddItem.27
+        lan: 冶炼炉
+      '28':
+        key: SlimefunItem.AddItem.28
+        lan: 测试定向合成机
+      '29':
+        key: SlimefunItem.AddItem.29
+        lan: 无尽工作台
+      '3':
+        key: SlimefunItem.AddItem.3
+        lan: tnnd对照组
+      '30':
+        key: SlimefunItem.AddItem.30
+        lan: 存储奇点
+      '31':
+        key: SlimefunItem.AddItem.31
+        lan: 将物品压缩成奇点...
+      '32':
+        key: SlimefunItem.AddItem.32
+        lan: 存入接口
+      '33':
+        key: SlimefunItem.AddItem.33
+        lan: 较快的将物品存入奇点...
+      '34':
+        key: SlimefunItem.AddItem.34
+        lan: 取出接口
+      '35':
+        key: SlimefunItem.AddItem.35
+        lan: 较快的将物品取出奇点...
+      '36':
+        key: SlimefunItem.AddItem.36
+        lan: 测试存储单元
+      '37':
+        key: SlimefunItem.AddItem.37
+        lan: 啥用都没
+      '38':
+        key: SlimefunItem.AddItem.38
+        lan: 测试存储单元2
+      '39':
+        key: SlimefunItem.AddItem.39
+        lan: 啥用都没
+      '4':
+        key: SlimefunItem.AddItem.4
+        lan: 测试机2
+      '40':
+        key: SlimefunItem.AddItem.40
+        lan: 测试存储单元3
+      '41':
+        key: SlimefunItem.AddItem.41
+        lan: 啥用都没
+      '42':
+        key: SlimefunItem.AddItem.42
+        lan: 测试特殊合成机
+      '43':
+        key: SlimefunItem.AddItem.43
+        lan: 测试测试
+      '44':
+        key: SlimefunItem.AddItem.44
+        lan: 测试快捷多方块
+      '45':
+        key: SlimefunItem.AddItem.45
+        lan: 测试测试
+      '46':
+        key: SlimefunItem.AddItem.46
+        lan: 反重力装置
+      '47':
+        key: SlimefunItem.AddItem.47
+        lan: 测试测试
+      '48':
+        key: SlimefunItem.AddItem.48
+        lan: 测试工作站
+      '49':
+        key: SlimefunItem.AddItem.49
+        lan: 测试测试
+      '5':
+        key: SlimefunItem.AddItem.5
+        lan: tnnd实验组
+      '50':
+        key: SlimefunItem.AddItem.50
+        lan: 测试终极快捷
+      '51':
+        key: SlimefunItem.AddItem.51
+        lan: 测试测试
+      '52':
+        key: SlimefunItem.AddItem.52
+        lan: 测试多方块部件
+      '53':
+        key: SlimefunItem.AddItem.53
+        lan: 测试测试
+      '54':
+        key: SlimefunItem.AddItem.54
+        lan: 测试多方块核心
+      '55':
+        key: SlimefunItem.AddItem.55
+        lan: 测试测试
+      '56':
+        key: SlimefunItem.AddItem.56
+        lan: '&b占位符'
+      '57':
+        key: SlimefunItem.AddItem.57
+        lan: '&7暂未开发'
+      '6':
+        key: SlimefunItem.AddItem.6
+        lan: 测试机3
+      '7':
+        key: SlimefunItem.AddItem.7
+        lan: tnnd测试组 AbstractProcessor
+      '8':
+        key: SlimefunItem.AddItem.8
+        lan: 测试机4
+      '9':
+        key: SlimefunItem.AddItem.9
+        lan: tnnd测试组 AbstractAdvancedProcessor
+      enable: 1
+    AddSlimefunItems:
+      '0':
+        key: SlimefunItem.AddSlimefunItems.0
+        lan: 注册附属物品...
+      '1':
+        key: SlimefunItem.AddSlimefunItems.1
+        lan: 注册附属机器...
+      '10':
+        key: SlimefunItem.AddSlimefunItems.10
+        lan: '&7或者在本附属的矿机中获取'
+      '11':
+        key: SlimefunItem.AddSlimefunItems.11
+        lan: '&f获取方式'
+      '12':
+        key: SlimefunItem.AddSlimefunItems.12
+        lan: '&7在末地部分群系开采'
+      '13':
+        key: SlimefunItem.AddSlimefunItems.13
+        lan: '&7或者在本附属的矿机中获取'
+      '14':
+        key: SlimefunItem.AddSlimefunItems.14
+        lan: '&f机制'
+      '2':
+        key: SlimefunItem.AddSlimefunItems.2
+        lan: '&c在%s中锻造!'
+      '3':
+        key: SlimefunItem.AddSlimefunItems.3
+        lan: '&f获取方式'
+      '4':
+        key: SlimefunItem.AddSlimefunItems.4
+        lan: '&7会出现在一些隐蔽地方...'
+      '5':
+        key: SlimefunItem.AddSlimefunItems.5
+        lan: '&7还是不要想这玩意了'
+      '6':
+        key: SlimefunItem.AddSlimefunItems.6
+        lan: '&7当你出现疑问,为什么不多看看\"的版本与说明\"分类呢'
+      '7':
+        key: SlimefunItem.AddSlimefunItems.7
+        lan: '&f获取方式'
+      '8':
+        key: SlimefunItem.AddSlimefunItems.8
+        lan: '&7在末地大部分群系'
+      '9':
+        key: SlimefunItem.AddSlimefunItems.9
+        lan: 或风袭沙丘或蘑菇岛开采
+      enable: 1
+    Blocks:
+      AbstractBlock:
+        enable: 1
+      MultiBlock:
+        MultiBlockAdvancedProcessor:
+          enable: 1
+        MultiBlockProcessor:
+          enable: 1
+        MultiIOPort:
+          '0':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.0
+            lan: '&a传输器信息'
+          '1':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.1
+            lan: '&7类别: &6'
+          '2':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.2
+            lan: 输入接口
+          '3':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.3
+            lan: 输出接口
+          '4':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.4
+            lan: '&7强对称: &6'
+          '5':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.5
+            lan: 是
+          '6':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.6
+            lan: 否
+          '7':
+            key: SlimefunItem.Blocks.MultiBlock.MultiIOPort.7
+            lan: '&7可配置: &6否'
+          enable: 1
+        PortalCore:
+          '0':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.0
+            lan: '&6点击切换传送门状态'
+          '1':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.1
+            lan: '&7当前状态: &a开启'
+          '10':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.10
+            lan: '&7当前状态: &c关闭'
+          '11':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.11
+            lan: '&a成功检测到目标传送门,成功建立超链接'
+          '12':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.12
+            lan: '&a成功激活传送门!'
+          '13':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.13
+            lan: '&c传送门结构不完整或者结构冲突!'
+          '14':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.14
+            lan: '&c目标传送门已损坏,请检查超链接'
+          '15':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.15
+            lan: '&a传送门成功关闭'
+          '16':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.16
+            lan: '&a全息投影已切换至南北向!'
+          '17':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.17
+            lan: '&a全息投影已切换至东西向!'
+          '18':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.18
+            lan: '&a全息投影已关闭!'
+          '2':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.2
+            lan: '&7若需要更改目标坐标需要重新构建传送门'
+          '3':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.3
+            lan: '&6点击切换传送门状态'
+          '4':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.4
+            lan: '&7当前状态: &c关闭'
+          '5':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.5
+            lan: '&6点击切换全息投影'
+          '6':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.6
+            lan: '&7当前状态: &a南北向'
+          '7':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.7
+            lan: '&6点击切换全息投影'
+          '8':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.8
+            lan: '&7当前状态: &a东西向'
+          '9':
+            key: SlimefunItem.Blocks.MultiBlock.PortalCore.9
+            lan: '&6点击切换全息投影'
+          enable: 1
+        SolarReactorCore:
+          '0':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.0
+            lan: '&6点击切换反应堆状态'
+          '1':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.1
+            lan: '&6shift点击切换是否自动构建'
+          '10':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.10
+            lan: '&6点击切换反应堆状态'
+          '11':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.11
+            lan: '&6shift点击切换是否自动构建'
+          '12':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.12
+            lan: '&7当前状态: &a开启'
+          '13':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.13
+            lan: '&7自动构建: &c关'
+          '14':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.14
+            lan: '&7警告:你最好别在进程中破坏机器'
+          '15':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.15
+            lan: '&6点击切换反应堆状态'
+          '16':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.16
+            lan: '&6shift点击切换是否自动构建'
+          '17':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.17
+            lan: '&7当前状态: &a开启'
+          '18':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.18
+            lan: '&7自动构建: &a开'
+          '19':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.19
+            lan: '&7警告:你最好别在进程中破坏机器'
+          '2':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.2
+            lan: '&7当前状态: &c关闭'
+          '20':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.20
+            lan: '&6点击切换全息投影'
+          '21':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.21
+            lan: '&7当前状态: &a开启'
+          '22':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.22
+            lan: '&6点击切换全息投影'
+          '23':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.23
+            lan: '&7当前状态: &c关闭'
+          '24':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.24
+            lan: '&c点击安全终止进程'
+          '25':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.25
+            lan: '&6不会引发爆炸'
+          '26':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.26
+            lan: '&a机器状态信息'
+          '27':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.27
+            lan: '&e位于[%s,%.0f,%.0f,%.0f]的超新星模拟器即将爆炸,快跑!'
+          '28':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.28
+            lan: '&c电力不足,无法构建多方块结构!'
+          '29':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.29
+            lan: '&a成功激活多方块结构!'
+          '3':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.3
+            lan: '&7自动构建: &c关'
+          '30':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.30
+            lan: '&c多方块结构不全或者结构冲突!'
+          '31':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.31
+            lan: '&a成功关闭多方块结构!'
+          '32':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.32
+            lan: '&c多方块核心处于自动构建模式无法进行手动操作'
+          '33':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.33
+            lan: '&a全息投影已开启!'
+          '34':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.34
+            lan: '&a全息投影已关闭!'
+          '35':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.35
+            lan: '&7当前机器状态: %s'
+          '36':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.36
+            lan: '&7待机中'
+          '37':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.37
+            lan: '&a进程中'
+          '38':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.38
+            lan: '&7当前电量: %dJ/%dJ'
+          '39':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.39
+            lan: '&7当前耗电: %dJ/t'
+          '4':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.4
+            lan: '&7警告:你最好别在进程中破坏机器'
+          '5':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.5
+            lan: '&6点击切换反应堆状态'
+          '6':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.6
+            lan: '&6shift点击切换是否自动构建'
+          '7':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.7
+            lan: '&7当前状态: &c关闭'
+          '8':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.8
+            lan: '&7自动构建: &a开'
+          '9':
+            key: SlimefunItem.Blocks.MultiBlock.SolarReactorCore.9
+            lan: '&7警告:你最好别在进程中破坏机器'
+          enable: 1
+        Transmutator:
+          '0':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.0
+            lan: '&6点击切换嬗变机状态'
+          '1':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.1
+            lan: '&6shift点击切换是否自动构建'
+          '10':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.10
+            lan: '&6点击切换嬗变机状态'
+          '11':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.11
+            lan: '&6shift点击切换是否自动构建'
+          '12':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.12
+            lan: '&7当前状态: &a开启'
+          '13':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.13
+            lan: '&7自动构建: &c关'
+          '14':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.14
+            lan: '&7警告:你最好别在进程中破坏机器'
+          '15':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.15
+            lan: '&6点击切换嬗变机状态'
+          '16':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.16
+            lan: '&6shift点击切换是否自动构建'
+          '17':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.17
+            lan: '&7当前状态: &a开启'
+          '18':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.18
+            lan: '&7自动构建: &a开'
+          '19':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.19
+            lan: '&7警告:你最好别在进程中破坏机器'
+          '2':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.2
+            lan: '&7当前状态: &c关闭'
+          '20':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.20
+            lan: '&6点击切换全息投影'
+          '21':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.21
+            lan: '&7当前状态: &a北向'
+          '22':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.22
+            lan: '&6点击切换全息投影'
+          '23':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.23
+            lan: '&7当前状态: &a东向'
+          '24':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.24
+            lan: '&6点击切换全息投影'
+          '25':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.25
+            lan: '&7当前状态: &a南向'
+          '26':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.26
+            lan: '&6点击切换全息投影'
+          '27':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.27
+            lan: '&7当前状态: &a西向'
+          '28':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.28
+            lan: '&6点击切换全息投影'
+          '29':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.29
+            lan: '&7当前状态: &c关闭'
+          '3':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.3
+            lan: '&7自动构建: &c关'
+          '30':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.30
+            lan: '&b冷却剂输入槽'
+          '31':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.31
+            lan: '&7请保证冷却剂供应'
+          '32':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.32
+            lan: '&e上方填入冷却剂'
+          '33':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.33
+            lan: '&e下方填入下界冰冷却剂'
+          '34':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.34
+            lan: '&7冷却剂槽位会限制货运只传入冷却剂'
+          '35':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.35
+            lan: '&c点击安全终止进程'
+          '36':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.36
+            lan: '&6不会引发熔毁'
+          '37':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.37
+            lan: '&a机器状态信息'
+          '38':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.38
+            lan: '&c电力不足,无法构建多方块结构!'
+          '39':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.39
+            lan: '&a成功激活多方块结构!'
+          '4':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.4
+            lan: '&7警告:你最好别在进程中破坏机器'
+          '40':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.40
+            lan: '&c多方块结构不全或者结构冲突!'
+          '41':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.41
+            lan: '&a成功关闭多方块结构!'
+          '42':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.42
+            lan: '&c多方块核心处于自动构建模式无法进行手动操作'
+          '43':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.43
+            lan: '&a全息投影已开启!'
+          '44':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.44
+            lan: '&a全息投影已切换方向!'
+          '45':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.45
+            lan: '&a全息投影已关闭!'
+          '46':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.46
+            lan: '&7当前机器状态: %s'
+          '47':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.47
+            lan: '&7待机中'
+          '48':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.48
+            lan: '&a进程中'
+          '49':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.49
+            lan: '&7当前电量: %dJ/%dJ'
+          '5':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.5
+            lan: '&6点击切换嬗变机状态'
+          '50':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.50
+            lan: '&7当前耗电: %dJ/t'
+          '51':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.51
+            lan: '&7当前并行处理数: %-3d'
+          '6':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.6
+            lan: '&6shift点击切换是否自动构建'
+          '7':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.7
+            lan: '&7当前状态: &c关闭'
+          '8':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.8
+            lan: '&7自动构建: &a开'
+          '9':
+            key: SlimefunItem.Blocks.MultiBlock.Transmutator.9
+            lan: '&7警告:你最好别在进程中破坏机器'
+          enable: 1
+      MultiBlockCore:
+        enable: 1
+      MultiBlockPart:
+        enable: 1
+      MultiBlockTypes:
+        enable: 1
+      MultiCore:
+        enable: 1
+      MultiCoreTest:
+        '0':
+          key: SlimefunItem.Blocks.MultiCoreTest.0
+          lan: '&6点击进行多方块机器构建测试'
+        '1':
+          key: SlimefunItem.Blocks.MultiCoreTest.1
+          lan: '&a成功激活多方块结构!'
+        '2':
+          key: SlimefunItem.Blocks.MultiCoreTest.2
+          lan: '&c多方块结构不全或者结构冲突!'
+        enable: 1
+      MultiPart:
+        enable: 1
+    Cargo:
+      AbstractCargo:
+        '0':
+          key: SlimefunItem.Cargo.AbstractCargo.0
+          lan: '&6点击切换方向'
+        '1':
+          key: SlimefunItem.Cargo.AbstractCargo.1
+          lan: '&3当前方向: 无'
+        '10':
+          key: SlimefunItem.Cargo.AbstractCargo.10
+          lan: '&6点击切换方向'
+        '11':
+          key: SlimefunItem.Cargo.AbstractCargo.11
+          lan: '&3当前方向: 向上'
+        '12':
+          key: SlimefunItem.Cargo.AbstractCargo.12
+          lan: '&6点击切换方向'
+        '13':
+          key: SlimefunItem.Cargo.AbstractCargo.13
+          lan: '&3当前方向: 向下'
+        '2':
+          key: SlimefunItem.Cargo.AbstractCargo.2
+          lan: '&6点击切换方向'
+        '3':
+          key: SlimefunItem.Cargo.AbstractCargo.3
+          lan: '&3当前方向: 向北'
+        '4':
+          key: SlimefunItem.Cargo.AbstractCargo.4
+          lan: '&6点击切换方向'
+        '5':
+          key: SlimefunItem.Cargo.AbstractCargo.5
+          lan: '&3当前方向: 向西'
+        '6':
+          key: SlimefunItem.Cargo.AbstractCargo.6
+          lan: '&6点击切换方向'
+        '7':
+          key: SlimefunItem.Cargo.AbstractCargo.7
+          lan: '&3当前方向: 向南'
+        '8':
+          key: SlimefunItem.Cargo.AbstractCargo.8
+          lan: '&6点击切换方向'
+        '9':
+          key: SlimefunItem.Cargo.AbstractCargo.9
+          lan: '&3当前方向: 向东'
+        enable: 1
+      CargoMachine:
+        AbstractSorter:
+          '0':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.0
+            lan: '&f机制'
+          '1':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.1
+            lan: '&7这是一个同步货运机器,属于[CHIP_SYNC]组'
+          '10':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.10
+            lan: '&7其中,白名单槽不放物品代表对应槽位允许任意输入'
+          '11':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.11
+            lan: '&7其中,白名单槽放物品代表对应槽位运行相同的物品的输入'
+          '12':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.12
+            lan: '&ePS:网络附属和原版货运会接受该限制'
+          '13':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.13
+            lan: '&f机制'
+          '14':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.14
+            lan: '&7机器会选中一个输入槽'
+          '15':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.15
+            lan: '&7在公共ticker计数器<ticker>(mod32)=0时,机器一定会选择第0槽位'
+          '16':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.16
+            lan: '&7每个tick机器将选中槽位的物品转移至输出槽'
+          '17':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.17
+            lan: '&7玩家可以使用%s控制机器选择输入槽'
+          '18':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.18
+            lan: '&e当机器读取到01码中的1时会选择至下一个输入槽位,若已经为最后一槽则循环至第0槽'
+          '19':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.19
+            lan: '&e当机器读取到01码中的0时会保持选择当前槽位不动'
+          '2':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.2
+            lan: '&7位于同组的机器将共享同一个ticker计数器'
+          '20':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.20
+            lan: '&a信息'
+          '21':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.21
+            lan: '&7下方为货运输出槽'
+          '22':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.22
+            lan: '&7上方为芯片槽'
+          '23':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.23
+            lan: '&7当前读取编码位数: '
+          '24':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.24
+            lan: '&7当前选择的槽位数: '
+          '25':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.25
+            lan: '&a信息'
+          '26':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.26
+            lan: '&7下方为货运输出槽'
+          '27':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.27
+            lan: '&7上方为芯片槽'
+          '28':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.28
+            lan: '&7当前读取编码位数: '
+          '29':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.29
+            lan: '&e待机中,芯片不存在或已损坏'
+          '3':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.3
+            lan: '&7机器用该计数器数值顺序读取%s中记录的01码'
+          '4':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.4
+            lan: '&7具体地,机器会读取01码的第<ticker>(mod32)位'
+          '5':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.5
+            lan: '&7机器根据读取结果是0/1会执行相应的行为'
+          '6':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.6
+            lan: '&f机制'
+          '7':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.7
+            lan: '&7机器拥有%d个输入槽位以及%d个输入白名单槽'
+          '8':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.8
+            lan: '&7你将会在界面中看见用彩色玻璃板标出的槽位序号'
+          '9':
+            key: SlimefunItem.Cargo.CargoMachine.AbstractSorter.9
+            lan: '&7白名单槽会对货运的输入流进行限制'
+          enable: 1
+        AbstractSyncTickCargo:
+          enable: 1
+        BiSorter:
+          '0':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.0
+            lan: '&6白名单槽0'
+          '1':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.1
+            lan: '&7设置白名单'
+          '2':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.2
+            lan: '&6输入槽0'
+          '3':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.3
+            lan: '&7货运输入~'
+          '4':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.4
+            lan: '&6输入槽1'
+          '5':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.5
+            lan: '&7货运输入~'
+          '6':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.6
+            lan: '&6白名单槽1'
+          '7':
+            key: SlimefunItem.Cargo.CargoMachine.BiSorter.7
+            lan: '&7设置白名单'
+          enable: 1
+        OctaSorter:
+          '0':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.0
+            lan: '&6白名单槽0'
+          '1':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.1
+            lan: '&7设置白名单'
+          '10':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.10
+            lan: '&6白名单槽5'
+          '11':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.11
+            lan: '&7设置白名单'
+          '12':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.12
+            lan: '&6白名单槽6'
+          '13':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.13
+            lan: '&7设置白名单'
+          '14':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.14
+            lan: '&6白名单槽7'
+          '15':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.15
+            lan: '&7设置白名单'
+          '16':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.16
+            lan: '&6输入槽0'
+          '17':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.17
+            lan: '&7货运输入~'
+          '18':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.18
+            lan: '&6输入槽1'
+          '19':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.19
+            lan: '&7货运输入~'
+          '2':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.2
+            lan: '&6白名单槽1'
+          '20':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.20
+            lan: '&6输入槽2'
+          '21':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.21
+            lan: '&7货运输入~'
+          '22':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.22
+            lan: '&6输入槽3'
+          '23':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.23
+            lan: '&7货运输入~'
+          '24':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.24
+            lan: '&6输入槽4'
+          '25':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.25
+            lan: '&7货运输入~'
+          '26':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.26
+            lan: '&6输入槽5'
+          '27':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.27
+            lan: '&7货运输入~'
+          '28':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.28
+            lan: '&6输入槽6'
+          '29':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.29
+            lan: '&7货运输入~'
+          '3':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.3
+            lan: '&7设置白名单'
+          '30':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.30
+            lan: '&6输入槽7'
+          '31':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.31
+            lan: '&7货运输入~'
+          '4':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.4
+            lan: '&6白名单槽2'
+          '5':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.5
+            lan: '&7设置白名单'
+          '6':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.6
+            lan: '&6白名单槽3'
+          '7':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.7
+            lan: '&7设置白名单'
+          '8':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.8
+            lan: '&6白名单槽4'
+          '9':
+            key: SlimefunItem.Cargo.CargoMachine.OctaSorter.9
+            lan: '&7设置白名单'
+          enable: 1
+        QuarSorter:
+          '0':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.0
+            lan: '&6白名单槽0'
+          '1':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.1
+            lan: '&7设置白名单'
+          '10':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.10
+            lan: '&6输入槽1'
+          '11':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.11
+            lan: '&7货运输入~'
+          '12':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.12
+            lan: '&6输入槽2'
+          '13':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.13
+            lan: '&7货运输入~'
+          '14':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.14
+            lan: '&6白名单槽2'
+          '15':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.15
+            lan: '&7设置白名单'
+          '2':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.2
+            lan: '&6输入槽0'
+          '3':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.3
+            lan: '&7货运输入~'
+          '4':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.4
+            lan: '&6输入槽3'
+          '5':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.5
+            lan: '&7货运输入~'
+          '6':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.6
+            lan: '&6白名单槽3'
+          '7':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.7
+            lan: '&7设置白名单'
+          '8':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.8
+            lan: '&6白名单槽1'
+          '9':
+            key: SlimefunItem.Cargo.CargoMachine.QuarSorter.9
+            lan: '&7设置白名单'
+          enable: 1
+        StorageOperator:
+          enable: 1
+        TrashCan:
+          enable: 1
+      Config:
+        CargoConfigCard:
+          '0':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.0
+            lan: '&x&E&B&3&3&E&B通用货运配置卡: &f'
+          '1':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.1
+            lan: '&8⇨ &7强对称: &3'
+          '2':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.2
+            lan: '&8⇨ &7仅空传输: &3'
+          '3':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.3
+            lan: '&8⇨ &7懒惰模式: &3'
+          '4':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.4
+            lan: '&8⇨ &7白名单: &3'
+          '5':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.5
+            lan: '&8⇨ &7取自输入槽: &3'
+          '6':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.6
+            lan: '&8⇨ &7传向输出槽: &3'
+          '7':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.7
+            lan: '&8⇨ &7逆向传输: &3'
+          '8':
+            key: SlimefunItem.Cargo.Config.CargoConfigCard.8
+            lan: '&8⇨ &7传输数量: &3'
+          enable: 1
+        ChipCard:
+          enable: 1
+        ChipCardCode:
+          '0':
+            key: SlimefunItem.Cargo.Config.ChipCardCode.0
+            lan: '&x&E&B&3&3&E&B芯片内存: &f'
+          enable: 1
+        ChipControllable:
+          enable: 1
+        ConfigCard:
+          enable: 1
+      Links:
+        HyperLink:
+          '0':
+            key: SlimefunItem.Cargo.Links.HyperLink.0
+            lan: '&x&E&B&3&3&E&B链接的坐标: &f'
+          enable: 1
+      Singularity:
+        SingularityStorage:
+          '0':
+            key: SlimefunItem.Cargo.Singularity.SingularityStorage.0
+            lan: '&x&E&B&3&3&E&B压缩物品: &f'
+          '1':
+            key: SlimefunItem.Cargo.Singularity.SingularityStorage.1
+            lan: '&x&E&B&3&3&E&B压缩数量: &f'
+          enable: 1
+      StorageMachines:
+        AbstractIOPort:
+          '0':
+            key: SlimefunItem.Cargo.StorageMachines.AbstractIOPort.0
+            lan: '&8奇点中存储的物品样式'
+          '1':
+            key: SlimefunItem.Cargo.StorageMachines.AbstractIOPort.1
+            lan: '&c未检测到物品存储!'
+          '2':
+            key: SlimefunItem.Cargo.StorageMachines.AbstractIOPort.2
+            lan: '&6将奇点置于下方'
+          '3':
+            key: SlimefunItem.Cargo.StorageMachines.AbstractIOPort.3
+            lan: '&a机器将自动检测奇点内容并运行'
+          enable: 1
+        AbstractTransportor:
+          enable: 1
+        InputPort:
+          enable: 1
+        OutputPort:
+          enable: 1
+        Singularity:
+          enable: 1
+      Storages:
+        enable: 1
+      TestStorageUnit:
+        '0':
+          key: SlimefunItem.Cargo.TestStorageUnit.0
+          lan: 测试他妈的
+        enable: 1
+      TestStorageUnit2:
+        enable: 1
+      TestStorageUnit3:
+        enable: 1
+      Transportation:
+        AdjacentCargo:
+          '0':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.0
+            lan: '&b机制'
+          '1':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.1
+            lan: '&7在左侧配置源方方块邻接方向'
+          '10':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.10
+            lan: '&e机器将从源方方块向目标方块进行传输'
+          '11':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.11
+            lan: '&c警告:当你设置两方块相同时,请不要让他们操作同样的槽位,否则后果自负'
+          '12':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.12
+            lan: '&f机制'
+          '13':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.13
+            lan: '&7这是一个普通货运机器'
+          '14':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.14
+            lan: '&7普通货运机器的行为会包括若干对源方块和目标方块'
+          '15':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.15
+            lan: '&7普通货运机器会进行从源方块到目标方块的物流传输'
+          '16':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.16
+            lan: '&7普通货运机器支持较大规模的传输量'
+          '17':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.17
+            lan: '&7但是相应的,他会忽视机器对物品的输入槽位限制'
+          '18':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.18
+            lan: '&f机制'
+          '19':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.19
+            lan: '&7本机器可以选择与其相邻的方块参与传输'
+          '2':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.2
+            lan: '&7在中间的槽位插入[%s]'
+          '3':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.3
+            lan: '&7在下方放入黑/白名单物品'
+          '4':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.4
+            lan: '&e机器将从源方方块向目标方块进行传输'
+          '5':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.5
+            lan: '&c警告:当你设置两方块相同时,请不要让他们操作同样的槽位,否则后果自负'
+          '6':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.6
+            lan: '&b机制'
+          '7':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.7
+            lan: '&7在右侧配置目标方块邻接方向'
+          '8':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.8
+            lan: '&7在中间的槽位插入[%s]'
+          '9':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargo.9
+            lan: '&7在下方放入黑/白名单物品'
+          enable: 1
+        AdjacentCargoPlus:
+          '0':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.0
+            lan: '&b机制'
+          '1':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.1
+            lan: '&7在左侧配置源方方块邻接方向'
+          '10':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.10
+            lan: '&e机器将从源方方块向目标方块进行传输'
+          '11':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.11
+            lan: '&c警告:当你设置两方块相同时,请不要让他们操作同样的槽位,否则后果自负'
+          '12':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.12
+            lan: '&f机制'
+          '13':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.13
+            lan: '&7这是一个智能货运机器'
+          '14':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.14
+            lan: '&7智能货运机器的行为会包括若干对源方块和目标方块'
+          '15':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.15
+            lan: '&7智能货运机器会进行从源方块到目标方块的物流传输'
+          '16':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.16
+            lan: '&7智能货运机器支持目标方块设置的输入槽限制'
+          '17':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.17
+            lan: '&7但是相应的,其最大传输量会被限制为min(576,配置数)'
+          '18':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.18
+            lan: '&f机制'
+          '19':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.19
+            lan: '&7本机器可以选择与其相邻的方块参与传输'
+          '2':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.2
+            lan: '&7在中间的槽位插入[%s]'
+          '3':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.3
+            lan: '&7在下方放入黑/白名单物品'
+          '4':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.4
+            lan: '&e机器将从源方方块向目标方块进行传输'
+          '5':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.5
+            lan: '&c警告:当你设置两方块相同时,请不要让他们操作同样的槽位,否则后果自负'
+          '6':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.6
+            lan: '&b机制'
+          '7':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.7
+            lan: '&7在右侧配置目标方块邻接方向'
+          '8':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.8
+            lan: '&7在中间的槽位插入[%s]'
+          '9':
+            key: SlimefunItem.Cargo.Transportation.AdjacentCargoPlus.9
+            lan: '&7在下方放入黑/白名单物品'
+          enable: 1
+        LineCargo:
+          '0':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.0
+            lan: '&b机制'
+          '1':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.1
+            lan: '&7在左侧配置链式方向'
+          '10':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.10
+            lan: '&e机器将进行链式传输'
+          '11':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.11
+            lan: '&c警告:只有连续方块长度长于1时才会进行传输'
+          '12':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.12
+            lan: '&6点击切换是否首尾循环'
+          '13':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.13
+            lan: '&3当前设置: false'
+          '14':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.14
+            lan: '&6点击切换是否首尾循环'
+          '15':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.15
+            lan: '&3当前设置: true'
+          '16':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.16
+            lan: '&f机制'
+          '17':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.17
+            lan: '&7这是一个普通货运机器'
+          '18':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.18
+            lan: '&7普通货运机器的行为会包括若干对源方块和目标方块'
+          '19':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.19
+            lan: '&7普通货运机器会进行从源方块到目标方块的物流传输'
+          '2':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.2
+            lan: '&7在中间的槽位插入[%s]'
+          '20':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.20
+            lan: '&7普通货运机器支持较大规模的传输量'
+          '21':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.21
+            lan: '&7但是相应的,他会忽视机器对物品的输入槽位限制'
+          '22':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.22
+            lan: '&f机制'
+          '23':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.23
+            lan: '&7本机器可以选择一个方向进行直线搜素'
+          '24':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.24
+            lan: '&&搜索会在方块不存在方块菜单,或至最大搜索距离终止'
+          '25':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.25
+            lan: '&7搜索最大距离为64'
+          '26':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.26
+            lan: '&7在搜索链上的机器会向接下来的机器进行传输'
+          '27':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.27
+            lan: '&7开启首位循环使搜索链上尾部机器向首部机器传输'
+          '3':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.3
+            lan: '&7在下方放入黑/白名单物品'
+          '4':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.4
+            lan: '&e机器将进行链式传输'
+          '5':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.5
+            lan: '&c警告:只有连续方块长度长于1时才会进行传输'
+          '6':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.6
+            lan: '&b机制'
+          '7':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.7
+            lan: '&7在右侧配置链式设定'
+          '8':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.8
+            lan: '&7在中间的槽位插入[%s]'
+          '9':
+            key: SlimefunItem.Cargo.Transportation.LineCargo.9
+            lan: '&7在下方放入黑/白名单物品'
+          enable: 1
+        RedstoneAdjacentCargo:
+          enable: 1
+        RemoteCargo:
+          '0':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.0
+            lan: '&b机制'
+          '1':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.1
+            lan: '&7在左侧配置源方方块超链接'
+          '10':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.10
+            lan: '&e机器将从源方方块向目标方块进行传输'
+          '11':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.11
+            lan: '&c警告:当你设置两方块相同时,请不要让他们操作同样的槽位,否则后果自负'
+          '12':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.12
+            lan: '&f机制'
+          '13':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.13
+            lan: '&7这是一个普通货运机器'
+          '14':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.14
+            lan: '&7普通货运机器的行为会包括若干对源方块和目标方块'
+          '15':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.15
+            lan: '&7普通货运机器会进行从源方块到目标方块的物流传输'
+          '16':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.16
+            lan: '&7普通货运机器支持较大规模的传输量'
+          '17':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.17
+            lan: '&7但是相应的,他会忽视机器对物品的输入槽位限制'
+          '18':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.18
+            lan: '&f机制'
+          '19':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.19
+            lan: '&7本机器可以选择任意方块参与传输'
+          '2':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.2
+            lan: '&7在中间的槽位插入[%s]'
+          '20':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.20
+            lan: 将绑定目标方块的%s插入指定槽位以选择参与的方块
+          '3':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.3
+            lan: '&7在下方放入黑/白名单物品'
+          '4':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.4
+            lan: '&e机器将从源方方块向目标方块进行传输'
+          '5':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.5
+            lan: '&c警告:当你设置两方块相同时,请不要让他们操作同样的槽位,否则后果自负'
+          '6':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.6
+            lan: '&b机制'
+          '7':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.7
+            lan: '&7在右侧配置目标方块超链接'
+          '8':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.8
+            lan: '&7在中间的槽位插入[%s]'
+          '9':
+            key: SlimefunItem.Cargo.Transportation.RemoteCargo.9
+            lan: '&7在下方放入黑/白名单物品'
+          enable: 1
+        RemoteCargoPlus:
+          enable: 1
+      WorkBench:
+        CargoConfigurator:
+          '0':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.0
+            lan: '&6点击构建货运配置卡'
+          '1':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.1
+            lan: '&e将任意货运配置卡置于下方槽位'
+          '10':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.10
+            lan: '&e将[%s]或[%s]置于下方'
+          '11':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.11
+            lan: '&7配置是否使用仅空传输'
+          '12':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.12
+            lan: '&7即是否只传向空槽位'
+          '13':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.13
+            lan: '&6配置 懒惰模式'
+          '14':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.14
+            lan: '&e将[%s]或[%s]置于下方'
+          '15':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.15
+            lan: '&7配置是否使用懒惰模式'
+          '16':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.16
+            lan: '&7即是否在传输一次后停止'
+          '17':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.17
+            lan: '&6配置 白名单'
+          '18':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.18
+            lan: '&e将[%s]或[%s]置于下方'
+          '19':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.19
+            lan: '&7配置是否使用白名单'
+          '2':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.2
+            lan: '&7并在对应的配置槽位中放入指定物品'
+          '20':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.20
+            lan: '&7即是否将物品列表视为白名单,默认黑名单'
+          '21':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.21
+            lan: '&6配置 取自输入槽'
+          '22':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.22
+            lan: '&e将[%s]或[%s]置于下方'
+          '23':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.23
+            lan: '&7配置是否取自输入槽'
+          '24':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.24
+            lan: '&7即只选择源方块的输入槽进行传输,默认为只选择输出槽'
+          '25':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.25
+            lan: '&6配置 传向输出槽'
+          '26':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.26
+            lan: '&e将[%s]或[%s]置于下方'
+          '27':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.27
+            lan: '&7配置是否传向输出槽'
+          '28':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.28
+            lan: '&7即只选择目标方块的输出槽进行传输,默认为只选择输入槽'
+          '29':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.29
+            lan: '&6配置 逆向传输'
+          '3':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.3
+            lan: '&7点击该物品,即可进行配置'
+          '30':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.30
+            lan: '&e将[%s]或[%s]置于下方'
+          '31':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.31
+            lan: '&7配置是否使用逆向传输'
+          '32':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.32
+            lan: '&7即是否从目标方块指定槽位向源方块指定槽位传输'
+          '33':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.33
+            lan: '&6配置 传输数量限制'
+          '34':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.34
+            lan: '&e将[%s]置于下方'
+          '35':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.35
+            lan: '&7配置传输数量'
+          '36':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.36
+            lan: '&a传输数量增加<物品数量>*64'
+          '37':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.37
+            lan: '&6配置 传输数量限制'
+          '38':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.38
+            lan: '&e将[%s]置于下方'
+          '39':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.39
+            lan: '&7配置传输数量'
+          '4':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.4
+            lan: '&a支持一次配置多个配置卡'
+          '40':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.40
+            lan: '&a传输数量增加<物品数量>'
+          '41':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.41
+            lan: '&a小tips'
+          '42':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.42
+            lan: '&7将仅空模式设置为true可以减少机器运行开销'
+          '43':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.43
+            lan: '&a小tips'
+          '44':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.44
+            lan: '&7强对称模式很强大,或许你会很好的利用它'
+          '45':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.45
+            lan: '&a小tips'
+          '46':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.46
+            lan: '&7懒惰模式会在首次传输某槽位后终止传输'
+          '47':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.47
+            lan: '&a小tips'
+          '48':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.48
+            lan: '&7请不要让传输双方的目标槽位重叠,除非你想丢物品!'
+          '49':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.49
+            lan: '&a小tips'
+          '5':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.5
+            lan: '&6配置 强对称'
+          '50':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.50
+            lan: '&7若无特殊需求,尽量不要放置黑白名单,这有助于服务器健康'
+          '51':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.51
+            lan: '&a小tips'
+          '52':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.52
+            lan: '&7将仅空模式设置为true可以减少机器运行开销'
+          '53':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.53
+            lan: '&a小tips'
+          '54':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.54
+            lan: '&7货运配置卡可以同时配置一组!'
+          '55':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.55
+            lan: '&a小tips'
+          '56':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.56
+            lan: '&7已经配置好的配置卡可以放入配置槽重配,这将覆盖之前的设置'
+          '57':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.57
+            lan: '&a小tips'
+          '58':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.58
+            lan: '&7将仅空模式设置为true可以减少机器运行开销'
+          '59':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.59
+            lan: '&a小tips'
+          '6':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.6
+            lan: '&e将[%s]或[%s]置于下方'
+          '60':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.60
+            lan: '&7逆向模式看起来似乎没什么用,不过你可以在链式运输中使用它'
+          '61':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.61
+            lan: '&a小tips'
+          '62':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.62
+            lan: '&7本附属通用货运方法由matl114设计'
+          '63':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.63
+            lan: 若有疑问可以寻找作者
+          '64':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.64
+            lan: '&a小tips'
+          '65':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.65
+            lan: '&7最有效的配置是除了仅空模式以外全设置false,同时调制合适的传输数量'
+          '66':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.66
+            lan: '&x&E&B&3&3&E&B小彩蛋'
+          '67':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.67
+            lan: '&b恭喜您抽中了1/3600概率的彩蛋'
+          '68':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.68
+            lan: '&b想来您今天的运势一定很好!'
+          '69':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.69
+            lan: '&a配置成功!'
+          '7':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.7
+            lan: '&7配置是否使用强对称传输'
+          '70':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.70
+            lan: '&c配置失败,请检查槽位的内容!'
+          '8':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.8
+            lan: '&7即是否将物品按槽位进行对应的运输'
+          '9':
+            key: SlimefunItem.Cargo.WorkBench.CargoConfigurator.9
+            lan: '&6配置 仅空运输'
+          enable: 1
+        ChipBiConsumer:
+          '0':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.0
+            lan: '&6芯片输入槽'
+          '1':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.1
+            lan: '&7将待操作的第一位芯片放入该槽'
+          '10':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.10
+            lan: '&7将所需物品插入指定槽位即可消耗电力运算'
+          '11':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.11
+            lan: '&f且'
+          '12':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.12
+            lan: '&7插入%s进行且操作'
+          '13':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.13
+            lan: '&7运算规则:'
+          '14':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.14
+            lan: '&7依次对两个芯片的对应01位进行'
+          '15':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.15
+            lan: 运算
+          '16':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.16
+            lan: '&f或'
+          '17':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.17
+            lan: '&7插入%s进行或操作'
+          '18':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.18
+            lan: '&7运算规则:'
+          '19':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.19
+            lan: '&7依次对两个芯片的对应01位进行'
+          '2':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.2
+            lan: '&6逻辑物质输入槽'
+          '20':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.20
+            lan: 运算
+          '21':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.21
+            lan: '&f异或'
+          '22':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.22
+            lan: '&7插入%s进行异或操作'
+          '23':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.23
+            lan: '&7运算规则:'
+          '24':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.24
+            lan: '&7依次对两个芯片的对应01位进行'
+          '25':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.25
+            lan: 运算
+          '3':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.3
+            lan: '&7将位运算对应的物品放入该槽'
+          '4':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.4
+            lan: '&6芯片输入槽'
+          '5':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.5
+            lan: '&7将待操作的第二位芯片放入该槽'
+          '6':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.6
+            lan: '&a输出槽'
+          '7':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.7
+            lan: '&7只有输入槽为空时才会输出'
+          '8':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.8
+            lan: '&f机制'
+          '9':
+            key: SlimefunItem.Cargo.WorkBench.ChipBiConsumer.9
+            lan: '&7机器可以进行 且 或 异或 三种位运算'
+          enable: 1
+        ChipConsumer:
+          '0':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.0
+            lan: '&6芯片输入槽'
+          '1':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.1
+            lan: '&7将待操作的芯片放入该槽'
+          '10':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.10
+            lan: '&7插入%s进行取反操作'
+          '11':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.11
+            lan: '&7运算规则:'
+          '12':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.12
+            lan: '&7依次对输入芯片的01位进行'
+          '13':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.13
+            lan: 运算
+          '14':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.14
+            lan: '&f左移'
+          '15':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.15
+            lan: '&7插入%s进行左移操作'
+          '16':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.16
+            lan: '&7运算规则:'
+          '17':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.17
+            lan: '&7对01码的首位加入0,丢弃最末尾'
+          '18':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.18
+            lan: '&f右移'
+          '19':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.19
+            lan: '&7插入%s进行右移操作'
+          '2':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.2
+            lan: '&6逻辑物质输入槽'
+          '20':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.20
+            lan: '&7运算规则:'
+          '21':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.21
+            lan: '&7当最末位是1时,向01码最末尾部加1,并丢掉首位'
+          '22':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.22
+            lan: '&7当最末位是0时,向01码最末尾部加0,并丢掉首位'
+          '3':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.3
+            lan: '&7将位运算对应的物品放入该槽'
+          '4':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.4
+            lan: '&a输出槽'
+          '5':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.5
+            lan: '&7只有输入槽为空时才会输出'
+          '6':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.6
+            lan: '&f机制'
+          '7':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.7
+            lan: '&7机器可以进行取反,左移一位,右移一位 三种位运算'
+          '8':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.8
+            lan: '&7将所需物品插入指定槽位即可消耗电力运算'
+          '9':
+            key: SlimefunItem.Cargo.WorkBench.ChipConsumer.9
+            lan: '&f取反'
+          enable: 1
+        ChipCopier:
+          '0':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.0
+            lan: '&6样板芯片槽'
+          '1':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.1
+            lan: '&a输入/输出槽'
+          '10':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.10
+            lan: '&7机器会尝试读取样本槽中的01码'
+          '11':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.11
+            lan: '&7机器会从输入/输出槽中读取目标芯片'
+          '12':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.12
+            lan: '&7机器会尝试复刻当前读取的数据到目标芯片的对应01位上'
+          '13':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.13
+            lan: '&a信息'
+          '14':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.14
+            lan: '&7当前读取编码位数: '
+          '2':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.2
+            lan: '&f机制'
+          '3':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.3
+            lan: '&7这是一个同步货运机器,属于[CHIP_SYNC]组'
+          '4':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.4
+            lan: '&7位于同组的机器将共享同一个ticker计数器'
+          '5':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.5
+            lan: '&7机器用该计数器数值顺序读取%s中记录的01码'
+          '6':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.6
+            lan: '&7具体地,机器会读取01码的第<ticker>(mod32)位'
+          '7':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.7
+            lan: '&7机器根据读取结果是0/1会执行相应的行为'
+          '8':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.8
+            lan: '&f机制'
+          '9':
+            key: SlimefunItem.Cargo.WorkBench.ChipCopier.9
+            lan: '&7机器拥有一个样板芯片槽和一个输入/输出槽'
+          enable: 1
+    CustomSlimefunItem:
+      '0':
+        key: SlimefunItem.CustomSlimefunItem.0
+        lan: '找不到附属实例!  注册信息: '
+      enable: 1
+    Items:
+      AbstractGeoResource:
+        '0':
+          key: SlimefunItem.Items.AbstractGeoResource.0
+          lan: '找不到附属实例!  注册信息: '
+        enable: 1
+      AntiGravityBar:
+        enable: 1
+      CustomProps:
+        enable: 1
+      FIrstCustomItem:
+        enable: 1
+      HypLink:
+        enable: 1
+      ItemNotPlaceable:
+        enable: 1
+      ItemNotUsable:
+        enable: 1
+      MaterialItem:
+        enable: 1
+    Machines:
+      AbstractAdvancedProcessor:
+        '0':
+          key: SlimefunItem.Machines.AbstractAdvancedProcessor.0
+          lan: '&8⇨ &7并行处理机器'
+        enable: 1
+      AbstractEnergyProcessor:
+        enable: 1
+      AbstractEnergyProvider:
+        enable: 1
+      AbstractMachine:
+        enable: 1
+      AbstractManual:
+        '0':
+          key: SlimefunItem.Machines.AbstractManual.0
+          lan: '&3搜索上一个配方'
+        '1':
+          key: SlimefunItem.Machines.AbstractManual.1
+          lan: '&3搜索下一个配方'
+        '10':
+          key: SlimefunItem.Machines.AbstractManual.10
+          lan: '&8若有多输出则显示第一个'
+        '11':
+          key: SlimefunItem.Machines.AbstractManual.11
+          lan: '&8配方编号: '
+        '12':
+          key: SlimefunItem.Machines.AbstractManual.12
+          lan: '&c电力不足!无法进行合成'
+        '13':
+          key: SlimefunItem.Machines.AbstractManual.13
+          lan: '&c电力不足!无法进行合成'
+        '2':
+          key: SlimefunItem.Machines.AbstractManual.2
+          lan: '&3单次合成'
+        '3':
+          key: SlimefunItem.Machines.AbstractManual.3
+          lan: '&6左键&b合成 &d1次 &b当前物品'
+        '4':
+          key: SlimefunItem.Machines.AbstractManual.4
+          lan: '&6右键&b合成 &d16次 &b当前物品'
+        '5':
+          key: SlimefunItem.Machines.AbstractManual.5
+          lan: '&3批量合成'
+        '6':
+          key: SlimefunItem.Machines.AbstractManual.6
+          lan: '&6左键&b合成 &d64次 &b当前物品'
+        '7':
+          key: SlimefunItem.Machines.AbstractManual.7
+          lan: '&6右键&b合成 &d3456次 &b当前物品'
+        '8':
+          key: SlimefunItem.Machines.AbstractManual.8
+          lan: '&c没有匹配的配方'
+        '9':
+          key: SlimefunItem.Machines.AbstractManual.9
+          lan: '&8匹配的产物'
+        enable: 1
+      AbstractProcessor:
+        enable: 1
+      AbstractSequenceProcessor:
+        '0':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.0
+          lan: '&3开启输入槽清空模式'
+        '1':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.1
+          lan: '&7当输入槽物品无法匹配有序输入配方时,会清空输入槽'
+        '10':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.10
+          lan: '&b完成全部阶段机器会尝试输出结果'
+        '2':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.2
+          lan: '&7当前状态: &c关闭'
+        '3':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.3
+          lan: '&3关闭输入槽清空模式'
+        '4':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.4
+          lan: '&7当输入槽物品无法匹配有序输入配方时,会清空输入槽'
+        '5':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.5
+          lan: '&7当前状态: &a开启'
+        '6':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.6
+          lan: '&6机制'
+        '7':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.7
+          lan: '&b该机器类型用于合成阶段输入配方'
+        '8':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.8
+          lan: '&b放入配方序列的第一个物品开启配方'
+        '9':
+          key: SlimefunItem.Machines.AbstractSequenceProcessor.9
+          lan: '&b按顺序满足配方每阶段输入需求才会进入下一阶段'
+        enable: 1
+      AbstractTransformer:
+        '0':
+          key: SlimefunItem.Machines.AbstractTransformer.0
+          lan: '&a工作中'
+        '1':
+          key: SlimefunItem.Machines.AbstractTransformer.1
+          lan: '&6空闲中'
+        '2':
+          key: SlimefunItem.Machines.AbstractTransformer.2
+          lan: '&7速度'
+        '3':
+          key: SlimefunItem.Machines.AbstractTransformer.3
+          lan: '&7每 '
+        '4':
+          key: SlimefunItem.Machines.AbstractTransformer.4
+          lan: ' 粘液刻生成一次'
+        enable: 1
+      AbstractWorkBench:
+        '0':
+          key: SlimefunItem.Machines.AbstractWorkBench.0
+          lan: '&b使用物品栏中的物品摆放配方'
+        '1':
+          key: SlimefunItem.Machines.AbstractWorkBench.1
+          lan: '&7左键放入一份配方'
+        '10':
+          key: SlimefunItem.Machines.AbstractWorkBench.10
+          lan: '&c合成失败,请检查合成条件是否均具备'
+        '11':
+          key: SlimefunItem.Machines.AbstractWorkBench.11
+          lan: '&c配方大小不匹配,不能在该工作台进行'
+        '2':
+          key: SlimefunItem.Machines.AbstractWorkBench.2
+          lan: '&7右键放入64份配方'
+        '3':
+          key: SlimefunItem.Machines.AbstractWorkBench.3
+          lan: '&a欢呼吧 懒狗们'
+        '4':
+          key: SlimefunItem.Machines.AbstractWorkBench.4
+          lan: '&6点击查看配方'
+        '5':
+          key: SlimefunItem.Machines.AbstractWorkBench.5
+          lan: '&a而且有一键放置配方的功能'
+        '6':
+          key: SlimefunItem.Machines.AbstractWorkBench.6
+          lan: '&b欢呼吧 懒狗们'
+        '7':
+          key: SlimefunItem.Machines.AbstractWorkBench.7
+          lan: '&f有序配方合成'
+        '8':
+          key: SlimefunItem.Machines.AbstractWorkBench.8
+          lan: '&7请在配方显示界面或者机器界面查看'
+        '9':
+          key: SlimefunItem.Machines.AbstractWorkBench.9
+          lan: '&c电力不足或条件不足! '
+        enable: 1
+      AutoMachines:
+        AEMachine:
+          '0':
+            key: SlimefunItem.Machines.AutoMachines.AEMachine.0
+            lan: '&a并行机器信息'
+          '1':
+            key: SlimefunItem.Machines.AutoMachines.AEMachine.1
+            lan: '&7在上方槽位插入工件以增加并行数'
+          '2':
+            key: SlimefunItem.Machines.AutoMachines.AEMachine.2
+            lan: '&7最大并行数: 64'
+          '3':
+            key: SlimefunItem.Machines.AutoMachines.AEMachine.3
+            lan: '&7当前并行数: '
+          '4':
+            key: SlimefunItem.Machines.AutoMachines.AEMachine.4
+            lan: '&7插入[%s]增加并行处理数'
+          enable: 1
+        AdvanceCrafter:
+          enable: 1
+        AdvanceRecipeCrafter:
+          '0':
+            key: SlimefunItem.Machines.AutoMachines.AdvanceRecipeCrafter.0
+            lan: '&e点击解析配方'
+          '1':
+            key: SlimefunItem.Machines.AutoMachines.AdvanceRecipeCrafter.1
+            lan: '&b机制:'
+          '2':
+            key: SlimefunItem.Machines.AutoMachines.AdvanceRecipeCrafter.2
+            lan: '&6将配方表输出的物品(若有多个则第一个)置于下方'
+          '3':
+            key: SlimefunItem.Machines.AutoMachines.AdvanceRecipeCrafter.3
+            lan: '&6右键该槽位,或者开关容器界面,配方将被解析'
+          '4':
+            key: SlimefunItem.Machines.AutoMachines.AdvanceRecipeCrafter.4
+            lan: '&6机器将按照解析出的指定配方合成'
+          enable: 1
+        EMachine:
+          enable: 1
+        FinalStackMachine:
+          enable: 1
+        MMGenerator:
+          enable: 1
+        REMachine:
+          enable: 1
+        SMGenerator:
+          enable: 1
+        SequenceConstructor:
+          enable: 1
+        SpecialCrafter:
+          '0':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.0
+            lan: '&e点击解析配方'
+          '1':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.1
+            lan: '&b机制:'
+          '2':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.2
+            lan: '&6将配方表输出的物品(若有多个则第一个)置于下方第一个槽位'
+          '3':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.3
+            lan: '&6将配方表所使用的特殊工作台置于下方第二个槽位'
+          '4':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.4
+            lan: '&6右键本槽位,或者开关容器界面,配方将被解析'
+          '5':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.5
+            lan: '&6机器将按照解析出的指定配方合成'
+          '6':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.6
+            lan: '&f支持的机器'
+          '7':
+            key: SlimefunItem.Machines.AutoMachines.SpecialCrafter.7
+            lan: '&7将机器插入指定槽位以进行合成'
+          enable: 1
+        StackMGenerator:
+          '0':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.0
+            lan: '&b机制'
+          '1':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.1
+            lan: '&6将要模拟的机器放在下方槽位'
+          '10':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.10
+            lan: '&7待机中'
+          '11':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.11
+            lan: '&b该机器支持的机器列表'
+          '12':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.12
+            lan: '&6点击打开菜单'
+          '13':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.13
+            lan: '&b当前模拟的机器配方列表'
+          '14':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.14
+            lan: '&6点击打开菜单'
+          '15':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.15
+            lan: '&a生成器信息'
+          '16':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.16
+            lan: '&7当前模拟的生成器名称: '
+          '17':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.17
+            lan: '&7当前并行处理数: %-3d'
+          '18':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.18
+            lan: '&7当前每刻耗电量: %sJ/t'
+          '19':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.19
+            lan: '&7当前电量: %sJ'
+          '2':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.2
+            lan: '&6机器会进行模拟,其中'
+          '20':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.20
+            lan: '&7当前工作效率: '
+          '21':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.21
+            lan: '&c生成器信息'
+          '22':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.22
+            lan: '&c缺少电力!'
+          '23':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.23
+            lan: '&7当前模拟的生成器名称: '
+          '24':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.24
+            lan: '&7当前并行处理数: %-3d'
+          '25':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.25
+            lan: '&7当前每刻耗电量: %sJ/t'
+          '26':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.26
+            lan: '&7当前电量: %sJ'
+          '27':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.27
+            lan: '&7下侧为输出槽,左侧为输入检测槽'
+          '28':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.28
+            lan: '&a输入检测槽中的物品不会被消耗!'
+          '29':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.29
+            lan: '&e生产数量只与堆叠机器的数目有关,与输入检测数目无关'
+          '3':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.3
+            lan: '&7<并行处理数>=<机器数*工作效率>'
+          '30':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.30
+            lan: '&e生产时间为原配方生产时间'
+          '31':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.31
+            lan: '&e您所放置的机器为空或者为不支持的机器'
+          '4':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.4
+            lan: '&7<耗电数>=<机器数量*单个机器耗电/工作效率>'
+          '5':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.5
+            lan: '&6有关高级机器和并行处理数的信息,请见粘液书<版本与说明>'
+          '6':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.6
+            lan: '&6支持的机器可以在粘液书<通用机器类型大全>'
+          '7':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.7
+            lan: '&6或者左边按钮查看'
+          '8':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.8
+            lan: '&6机器支持的配方可以点击右侧按钮查看'
+          '9':
+            key: SlimefunItem.Machines.AutoMachines.StackMGenerator.9
+            lan: '&c机器信息'
+          enable: 1
+        StackMachine:
+          '0':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.0
+            lan: '&b机制'
+          '1':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.1
+            lan: '&6将要模拟的机器放在下方槽位'
+          '10':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.10
+            lan: '&7待机中'
+          '11':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.11
+            lan: '&b该机器支持的机器列表'
+          '12':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.12
+            lan: '&6点击打开菜单'
+          '13':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.13
+            lan: '&b当前模拟的机器配方列表'
+          '14':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.14
+            lan: '&6点击打开菜单'
+          '15':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.15
+            lan: '&a机器信息'
+          '16':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.16
+            lan: '&7当前模拟的机器名称: '
+          '17':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.17
+            lan: '&7当前并行处理数: %-3d'
+          '18':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.18
+            lan: '&7当前每刻耗电量: %sJ/t'
+          '19':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.19
+            lan: '&7当前电量: %sJ'
+          '2':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.2
+            lan: '&6机器会进行模拟,其中'
+          '20':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.20
+            lan: '&7当前工作效率: '
+          '21':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.21
+            lan: '&c机器信息'
+          '22':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.22
+            lan: '&c缺少电力!'
+          '23':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.23
+            lan: '&7当前模拟的机器名称: '
+          '24':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.24
+            lan: '&7当前并行处理数: %-3d'
+          '25':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.25
+            lan: '&7当前每刻耗电量: %sJ/t'
+          '26':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.26
+            lan: '&7当前电量: %sJ'
+          '27':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.27
+            lan: '&e您所放置的机器为空或者为不支持的机器'
+          '3':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.3
+            lan: '&7<并行处理数>=<机器数*工作效率>'
+          '4':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.4
+            lan: '&7<耗电数>=<机器数量*单个机器耗电/工作效率>'
+          '5':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.5
+            lan: '&6有关高级机器和并行处理数的信息,请见粘液书<版本与说明>'
+          '6':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.6
+            lan: '&6支持的机器可以在粘液书<通用机器类型大全>'
+          '7':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.7
+            lan: '&6或者左边按钮查看'
+          '8':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.8
+            lan: '&6机器支持的配方可以点击右侧按钮查看'
+          '9':
+            key: SlimefunItem.Machines.AutoMachines.StackMachine.9
+            lan: '&c机器信息'
+          enable: 1
+      Electrics:
+        BiReactor:
+          '0':
+            key: SlimefunItem.Machines.Electrics.BiReactor.0
+            lan: '&6[%s]输入槽'
+          '1':
+            key: SlimefunItem.Machines.Electrics.BiReactor.1
+            lan: '&6[%s]输入槽'
+          '2':
+            key: SlimefunItem.Machines.Electrics.BiReactor.2
+            lan: '&e状态: &a正'
+          '3':
+            key: SlimefunItem.Machines.Electrics.BiReactor.3
+            lan: '&7发电量: %dJ/t'
+          '4':
+            key: SlimefunItem.Machines.Electrics.BiReactor.4
+            lan: '&e状态: &c负'
+          '5':
+            key: SlimefunItem.Machines.Electrics.BiReactor.5
+            lan: '&7发电量: %dJ/t'
+          '6':
+            key: SlimefunItem.Machines.Electrics.BiReactor.6
+            lan: '&f机制 &a正'
+          '7':
+            key: SlimefunItem.Machines.Electrics.BiReactor.7
+            lan: '&7当同时输入%s和%s时,视为满足条件,发电 %dJ'
+          '8':
+            key: SlimefunItem.Machines.Electrics.BiReactor.8
+            lan: '&f机制 &c负'
+          '9':
+            key: SlimefunItem.Machines.Electrics.BiReactor.9
+            lan: '&7当不满足’正‘的输入条件时候,视为不满足条件,发电 -%dJ'
+          enable: 1
+        Capacitor:
+          enable: 1
+        ChipReactor:
+          '0':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.0
+            lan: '&6当前机器信息'
+          '1':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.1
+            lan: '&f机制'
+          '2':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.2
+            lan: '&7当插入%s时'
+          '3':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.3
+            lan: '&7机器读取其中二进制码对应数字'
+          '4':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.4
+            lan: '&7并按%f倍率发电%d秒'
+          '5':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.5
+            lan: '&7当前发电: '
+          '6':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.6
+            lan: '&7当前不在发电'
+          '7':
+            key: SlimefunItem.Machines.Electrics.ChipReactor.7
+            lan: '&7当前发电: '
+          enable: 1
+        EGenerator:
+          enable: 1
+        EnergyTrash:
+          enable: 1
+        TestGenerator:
+          '0':
+            key: SlimefunItem.Machines.Electrics.TestGenerator.0
+            lan: '&f生成机制'
+          '1':
+            key: SlimefunItem.Machines.Electrics.TestGenerator.1
+            lan: '&7当机器中电力位于1,000J~1,145J时'
+          '2':
+            key: SlimefunItem.Machines.Electrics.TestGenerator.2
+            lan: '&7清空电力并生成'
+          '3':
+            key: SlimefunItem.Machines.Electrics.TestGenerator.3
+            lan: 虚空量子
+          enable: 1
+      FinalFeature:
+        enable: 1
+      ManualMachines:
+        FinalManual:
+          '0':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.0
+            lan: '&6配方匹配机制:'
+          '1':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.1
+            lan: '&b点击左边图标切换合成类型'
+          '10':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.10
+            lan: '&6左键&b合成 &d3456次 &b当前物品'
+          '11':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.11
+            lan: '&6右键&b合成 &d9,999,999次 &b当前物品'
+          '12':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.12
+            lan: '&6合成机制: '
+          '13':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.13
+            lan: 概念合成
+          '14':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.14
+            lan: '&b该快捷机器支持从非空的存储类物品中抽取材料'
+          '15':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.15
+            lan: '&b进行合成,并自动送入非空的存储类物品中'
+          '16':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.16
+            lan: '&c警告:请保证配方总输出数量小于2147483647'
+          '17':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.17
+            lan: '&b目前支持:'
+          '18':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.18
+            lan: '&7逻辑工艺: 奇点存储'
+          '19':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.19
+            lan: '&7网络(网络拓展): 量子存储'
+          '2':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.2
+            lan: '&b点击右边书本查看当前合成类型信息'
+          '20':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.20
+            lan: '&6点击查看配方'
+          '21':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.21
+            lan: '&6但是并没有一键放置配方的功能'
+          '22':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.22
+            lan: '&e您点的太快了,请您消停会'
+          '23':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.23
+            lan: '&e您点的太快了,请您消停会'
+          '24':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.24
+            lan: '&e配方类型获取错误'
+          '25':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.25
+            lan: '&8点击切换配方类型'
+          '26':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.26
+            lan: '&8匹配的产物'
+          '27':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.27
+            lan: '&8若有多输出则显示第一个'
+          '28':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.28
+            lan: '&8配方编号: '
+          '3':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.3
+            lan: '&b在输入栏放入物品进行快捷合成'
+          '4':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.4
+            lan: '&3搜索上一个配方'
+          '5':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.5
+            lan: '&3搜索下一个配方'
+          '6':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.6
+            lan: '&3单次合成'
+          '7':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.7
+            lan: '&6左键&b合成 &d1次 &b当前物品'
+          '8':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.8
+            lan: '&6右键&b合成 &d64次 &b当前物品'
+          '9':
+            key: SlimefunItem.Machines.ManualMachines.FinalManual.9
+            lan: '&3批量合成'
+          enable: 1
+        ManualCrafter:
+          enable: 1
+        ManualMachine:
+          enable: 1
+        MultiBlockManual:
+          '0':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.0
+            lan: '&c没有匹配的多方块机器'
+          '1':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.1
+            lan: '&6机制:'
+          '10':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.10
+            lan: '&3批量合成'
+          '11':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.11
+            lan: '&6左键&b合成 &d64次 &b当前物品'
+          '12':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.12
+            lan: '&6右键&b合成 &d3456次 &b当前物品'
+          '13':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.13
+            lan: '&c没有匹配的配方'
+          '14':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.14
+            lan: '&6点击查看配方'
+          '15':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.15
+            lan: '&6但是并没有一键放置配方的功能'
+          '16':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.16
+            lan: '&c电力不足!无法进行合成'
+          '17':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.17
+            lan: '&c电力不足!无法进行合成'
+          '18':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.18
+            lan: '&e您所摆放的方式并不构成多方块机器'
+          '19':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.19
+            lan: '&8检测出的多方块机器'
+          '2':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.2
+            lan: '&6在上方的3x3区域摆入多方块机器构造'
+          '20':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.20
+            lan: '&8匹配的产物'
+          '21':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.21
+            lan: '&8若有多输出则显示第一个'
+          '22':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.22
+            lan: '&8配方编号: '
+          '23':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.23
+            lan: '&f支持的多方块机器'
+          '24':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.24
+            lan: '&7将机器配方置于指定槽位以进行合成'
+          '3':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.3
+            lan: '&6即可加载配方'
+          '4':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.4
+            lan: '&6在右边放入物品进行快捷合成'
+          '5':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.5
+            lan: '&3搜索上一个配方'
+          '6':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.6
+            lan: '&3搜索下一个配方'
+          '7':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.7
+            lan: '&3单次合成'
+          '8':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.8
+            lan: '&6左键&b合成 &d1次 &b当前物品'
+          '9':
+            key: SlimefunItem.Machines.ManualMachines.MultiBlockManual.9
+            lan: '&6右键&b合成 &d16次 &b当前物品'
+          enable: 1
+      MenuBlock:
+        enable: 1
+      MultiCraftType:
+        enable: 1
+      RecipeDisplay:
+        '0':
+          key: SlimefunItem.Machines.RecipeDisplay.0
+          lan: '&a材料 '
+        '1':
+          key: SlimefunItem.Machines.RecipeDisplay.1
+          lan: '&e等价物品输入'
+        '2':
+          key: SlimefunItem.Machines.RecipeDisplay.2
+          lan: '&c输入数量: '
+        '3':
+          key: SlimefunItem.Machines.RecipeDisplay.3
+          lan: '&a产物 '
+        '4':
+          key: SlimefunItem.Machines.RecipeDisplay.4
+          lan: '&e随机物品输出'
+        '5':
+          key: SlimefunItem.Machines.RecipeDisplay.5
+          lan: '&e概率: '
+        '6':
+          key: SlimefunItem.Machines.RecipeDisplay.6
+          lan: '&c随机输出数量: %d~%d'
+        '7':
+          key: SlimefunItem.Machines.RecipeDisplay.7
+          lan: '&c输出数量: '
+        '8':
+          key: SlimefunItem.Machines.RecipeDisplay.8
+          lan: '&e进程耗时: '
+        '9':
+          key: SlimefunItem.Machines.RecipeDisplay.9
+          lan: '&e直接合成~'
+        enable: 1
+      RecipeLock:
+        enable: 1
+      SpecialMachines:
+        BoolGenerator:
+          '0':
+            key: SlimefunItem.Machines.SpecialMachines.BoolGenerator.0
+            lan: '&f生成机制'
+          '1':
+            key: SlimefunItem.Machines.SpecialMachines.BoolGenerator.1
+            lan: '&7当所有输入槽内物品全部相同时候,生成%s'
+          '2':
+            key: SlimefunItem.Machines.SpecialMachines.BoolGenerator.2
+            lan: '&f生成机制'
+          '3':
+            key: SlimefunItem.Machines.SpecialMachines.BoolGenerator.3
+            lan: '&7当任两输入槽内物品全部不同时候,生成%s'
+          '4':
+            key: SlimefunItem.Machines.SpecialMachines.BoolGenerator.4
+            lan: '&f生成机制'
+          '5':
+            key: SlimefunItem.Machines.SpecialMachines.BoolGenerator.5
+            lan: '&7当配方匹配时,槽位依次消耗min(槽位物品数,%s)个物品'
+          enable: 1
+        HeadAnalyzer:
+          '0':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.0
+            lan: '&e点击转换头颅'
+          '1':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.1
+            lan: '&7当下方为默认头颅时,点击输入hash,可以更改头颅样式'
+          '10':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.10
+            lan: '&3hash: &f空'
+          '11':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.11
+            lan: '&a头颅样式展示品'
+          '12':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.12
+            lan: '&7这是一个展示头颅'
+          '13':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.13
+            lan: '&e请输入头颅的hash码'
+          '14':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.14
+            lan: 单击此处拷贝hash码
+          '15':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.15
+            lan: 点击复制到剪贴板
+          '16':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.16
+            lan: '&e请输入头颅的hash码'
+          '17':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.17
+            lan: '&c不是合法物品,无法清除头颅数据!'
+          '2':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.2
+            lan: '&7当下方为展示示例头颅或非粘液物品时,将头颅转为默认头颅'
+          '3':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.3
+            lan: '&e点击输入hash'
+          '4':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.4
+            lan: '&7将在下方显示头颅样式'
+          '5':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.5
+            lan: '&c空'
+          '6':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.6
+            lan: '&c暂未输入hash或者不是有效的hash'
+          '7':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.7
+            lan: '&e点击解析下方头颅'
+          '8':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.8
+            lan: '&7若下方为有效物品,则显示hash'
+          '9':
+            key: SlimefunItem.Machines.SpecialMachines.HeadAnalyzer.9
+            lan: '&3hash: &f空'
+          enable: 1
+        LogicReactor:
+          '0':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.0
+            lan: '&6反应堆运行状态: &c关闭'
+          '1':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.1
+            lan: '&7点击开启反应堆'
+          '10':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.10
+            lan: '&7将会尝试生成 %s'
+          '11':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.11
+            lan: '&7当前三个材料的生成条件均不满足'
+          '12':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.12
+            lan: '&7将会尝试生成 %s'
+          '13':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.13
+            lan: '&f机制'
+          '14':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.14
+            lan: '&7该机器拥有四对布尔输入槽,分别在&c同一列&7由彩色的玻璃板标出'
+          '15':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.15
+            lan: '&7这些槽位用于输入布尔组件,即 %s 和 %s'
+          '16':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.16
+            lan: '&7只有这些槽位的物品满足一定机制时,合成才会尝试进行'
+          '17':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.17
+            lan: '&f机制'
+          '18':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.18
+            lan: '&7机器还有一个&c正常输入槽&7,用于输入 %s '
+          '19':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.19
+            lan: '&7当机器为空闲,四对布尔输入槽&c非空&7且满足右侧某条件时'
+          '2':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.2
+            lan: '&6反应堆运行状态: &a开启'
+          '20':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.20
+            lan: '&7才会尝试消耗正常输入槽内的 %s 进行合成'
+          '21':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.21
+            lan: '&7警告:当机器合成进行时,四对布尔输入槽内的物品会被&c清空&7!'
+          '22':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.22
+            lan: '&7指示:不过玩家使用普通货运输入时,布尔槽位只会被输入布尔组件'
+          '23':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.23
+            lan: '&7指示:你可以关闭机器来停止布尔组件的消耗'
+          '3':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.3
+            lan: '&7点击关闭反应堆'
+          '4':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.4
+            lan: '&c注意:关闭反应堆将丢失当前机器进度'
+          '5':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.5
+            lan: '&7当四对输入槽物品均为同样的布尔组件时'
+          '6':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.6
+            lan: '&7将会尝试生成 %s'
+          '7':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.7
+            lan: '&7当四对输入槽物品均为相反的布尔组件时'
+          '8':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.8
+            lan: '&7将会尝试生成 %s'
+          '9':
+            key: SlimefunItem.Machines.SpecialMachines.LogicReactor.9
+            lan: '&7当四对输入槽物品中只有一对布尔组件相异'
+          enable: 1
+        RegisteryLogger:
+          '0':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.0
+            lan: '&a点击输入SlimefunID'
+          '1':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.1
+            lan: '&a使用该配方注册'
+          '10':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.10
+            lan: '&7开发者专用'
+          '11':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.11
+            lan: '&7因为其他人也不用这格式'
+          '12':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.12
+            lan: '&a点击打印本附属物品注册模板'
+          '13':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.13
+            lan: '&7开发者专用'
+          '14':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.14
+            lan: '&7因为其他人也不用这格式'
+          '15':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.15
+            lan: '&a点击打印本附属粘液物品注册模板'
+          '16':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.16
+            lan: '&7开发者专用'
+          '17':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.17
+            lan: '&7因为其他人也不用这格式'
+          '18':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.18
+            lan: '&a点击打印本附属格式化配方注册字符串'
+          '19':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.19
+            lan: '&7开发者专用'
+          '2':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.2
+            lan: '&a使用默认配方注册'
+          '20':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.20
+            lan: '&7因为其他人也不用这格式'
+          '21':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.21
+            lan: 单击此处拷贝recipe字符串
+          '22':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.22
+            lan: 点击复制到剪贴板
+          '23':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.23
+            lan: '&e请输入新物品的slimefunID'
+          '24':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.24
+            lan: 点击拷贝语言配置文件框架
+          '25':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.25
+            lan: 点击复制到剪贴板
+          '26':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.26
+            lan: 点击拷贝物品注册代码
+          '27':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.27
+            lan: 点击复制到剪贴板
+          '28':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.28
+            lan: 点击拷贝物品注册代码
+          '29':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.29
+            lan: 点击复制到剪贴板
+          '3':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.3
+            lan: '&a生成: 普通材料'
+          '4':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.4
+            lan: '&a生成: 普通机器模板'
+          '5':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.5
+            lan: '&a生成: 普通生成器模板'
+          '6':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.6
+            lan: '&a生成: 普通定向模板'
+          '7':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.7
+            lan: '&a生成: 普通快捷'
+          '8':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.8
+            lan: '&a生成: 普通物品'
+          '9':
+            key: SlimefunItem.Machines.SpecialMachines.RegisteryLogger.9
+            lan: '&a点击打印本附属语言文件模板'
+          enable: 1
+      WorkBenchs:
+        BugCrafter:
+          '0':
+            key: SlimefunItem.Machines.WorkBenchs.BugCrafter.0
+            lan: '&c配方显示不完整，请从%s查看正确的配方!'
+          '1':
+            key: SlimefunItem.Machines.WorkBenchs.BugCrafter.1
+            lan: '&e点我进行合成'
+          '2':
+            key: SlimefunItem.Machines.WorkBenchs.BugCrafter.2
+            lan: '&7一次性最多合成%s个'
+          enable: 1
+        TestWorkBench:
+          '0':
+            key: SlimefunItem.Machines.WorkBenchs.TestWorkBench.0
+            lan: '&e点我进行合成'
+          enable: 1
+  Utils:
+    AddUtils:
+      '0':
+        key: Utils.AddUtils.0
+        lan: 逻辑工艺
+      '1':
+        key: Utils.AddUtils.1
+        lan: ' J 每次合成'
+      '10':
+        key: Utils.AddUtils.10
+        lan: '&7&7电量: &6%s/%sJ'
+      '11':
+        key: Utils.AddUtils.11
+        lan: '&a未发电'
+      '12':
+        key: Utils.AddUtils.12
+        lan: '&7类型:&6 %s'
+      '13':
+        key: Utils.AddUtils.13
+        lan: '&7&7电量: &6%s/%sJ'
+      '2':
+        key: Utils.AddUtils.2
+        lan: '&8⇨ &7速度: &b每 '
+      '3':
+        key: Utils.AddUtils.3
+        lan: ' 粘液刻生成一次'
+      '4':
+        key: Utils.AddUtils.4
+        lan: '&7机器合成进程数: %s'
+      '5':
+        key: Utils.AddUtils.5
+        lan: '&f获取方式'
+      '6':
+        key: Utils.AddUtils.6
+        lan: '&7在 %s 中获取'
+      '7':
+        key: Utils.AddUtils.7
+        lan: '&f获取方式'
+      '8':
+        key: Utils.AddUtils.8
+        lan: '&a发电中'
+      '9':
+        key: Utils.AddUtils.9
+        lan: '&7类型:&6 %s'
+      enable: 1
+    Algorithms:
+      DynamicArray:
+        enable: 1
+      DynamicMapper:
+        enable: 1
+      SimpleLinkList:
+        enable: 1
+    BukkitUtils:
+      '0':
+        key: Utils.BukkitUtils.0
+        lan: '&6万物起源 工作台'
+      '1':
+        key: Utils.BukkitUtils.1
+        lan: '&6原版熔炉'
+      enable: 1
+    CraftUtils:
+      enable: 1
+    DataCache:
+      enable: 1
+    DataTypeUtils:
+      enable: 1
+    Debug:
+      enable: 1
+    MachineRecipeUtils:
+      enable: 1
+    MathUtils:
+      '0':
+        key: Utils.MathUtils.0
+        lan: 草
+      '1':
+        key: Utils.MathUtils.1
+        lan: 草
+      '2':
+        key: Utils.MathUtils.2
+        lan: 草
+      enable: 1
+    MenuUtils:
+      '0':
+        key: Utils.MenuUtils.0
+        lan: '&6进程完成'
+      '1':
+        key: Utils.MenuUtils.1
+        lan: '&c空间不足'
+      '10':
+        key: Utils.MenuUtils.10
+        lan: 下一页
+      '11':
+        key: Utils.MenuUtils.11
+        lan: 返回
+      '12':
+        key: Utils.MenuUtils.12
+        lan: '&8机器配方显示'
+      '13':
+        key: Utils.MenuUtils.13
+        lan: '&3随机物品输出~'
+      '14':
+        key: Utils.MenuUtils.14
+        lan: ' 概率: '
+      '15':
+        key: Utils.MenuUtils.15
+        lan: '&3等价物品输入~'
+      '16':
+        key: Utils.MenuUtils.16
+        lan: '&e随机数量: '
+      '17':
+        key: Utils.MenuUtils.17
+        lan: '&c数量: '
+      '18':
+        key: Utils.MenuUtils.18
+        lan: 配方展示
+      '19':
+        key: Utils.MenuUtils.19
+        lan: '&a在该机器中耗时'
+      '2':
+        key: Utils.MenuUtils.2
+        lan: '&7⇦ 返回'
+      '20':
+        key: Utils.MenuUtils.20
+        lan: '&at制作'
+      '21':
+        key: Utils.MenuUtils.21
+        lan: '&a在该机器中制作'
+      '22':
+        key: Utils.MenuUtils.22
+        lan: 配方展示
+      '23':
+        key: Utils.MenuUtils.23
+        lan: '&a在该机器中耗时'
+      '24':
+        key: Utils.MenuUtils.24
+        lan: '&at制作'
+      '25':
+        key: Utils.MenuUtils.25
+        lan: '&a在该机器中制作'
+      '26':
+        key: Utils.MenuUtils.26
+        lan: 合法配方类型大赏
+      '27':
+        key: Utils.MenuUtils.27
+        lan: '&e该配方类型在本附属的配方类型黑名单中,暂不支持查看'
+      '28':
+        key: Utils.MenuUtils.28
+        lan: 识别机器类型大赏
+      '29':
+        key: Utils.MenuUtils.29
+        lan: '&e该机器类型无法识别,暂不支持查看'
+      '3':
+        key: Utils.MenuUtils.3
+        lan: '&b搜索...'
+      '4':
+        key: Utils.MenuUtils.4
+        lan: '&b单击搜索物品'
+      '5':
+        key: Utils.MenuUtils.5
+        lan: '&3配方类型信息'
+      '6':
+        key: Utils.MenuUtils.6
+        lan: '&a更多物品(已省略)'
+      '7':
+        key: Utils.MenuUtils.7
+        lan: 上一页
+      '8':
+        key: Utils.MenuUtils.8
+        lan: 上一页
+      '9':
+        key: Utils.MenuUtils.9
+        lan: 下一页
+      enable: 1
+    RecipeSupporter:
+      '0':
+        key: Utils.RecipeSupporter.0
+        lan: 'WARNING: %s 不是标准的机器,尝试修改机器配方列表失败,禁用该物品 + 模式'
+      '1':
+        key: Utils.RecipeSupporter.1
+        lan: 配方供应器开始进行数据采集,预计耗时2秒
+      '10':
+        key: Utils.RecipeSupporter.10
+        lan: 尝试载入机器配方修改配置文件
+      '11':
+        key: Utils.RecipeSupporter.11
+        lan: 注册堆叠机器的机器列表
+      '12':
+        key: Utils.RecipeSupporter.12
+        lan: '配方供应器工作完成, 耗时 '
+      '13':
+        key: Utils.RecipeSupporter.13
+        lan: ' 纳秒'
+      '14':
+        key: Utils.RecipeSupporter.14
+        lan: 配方供应器开始初始化...
+      '2':
+        key: Utils.RecipeSupporter.2
+        lan: 期间tps可能会下降,请不要在供应器工作时进入服务器
+      '3':
+        key: Utils.RecipeSupporter.3
+        lan: 期间的报错信息均可忽略
+      '4':
+        key: Utils.RecipeSupporter.4
+        lan: 读取全部配方中...
+      '5':
+        key: Utils.RecipeSupporter.5
+        lan: 全部配方读取完成
+      '6':
+        key: Utils.RecipeSupporter.6
+        lan: 初始化配方类型显示界面...
+      '7':
+        key: Utils.RecipeSupporter.7
+        lan: '&7配方类型:'
+      '8':
+        key: Utils.RecipeSupporter.8
+        lan: 初始化机器类型显示界面...
+      '9':
+        key: Utils.RecipeSupporter.9
+        lan: '警告: 如果你发现有机器没有检测到,说明他们使用了不支持的配方类型'
+      enable: 1
+    ReflectUtils:
+      enable: 1
+    SecurityUtils:
+      enable: 1
+    Settings:
+      enable: 1
+    TransportUtils:
+      enable: 1
+    UtilClass:
+      CargoClass:
+        CargoConfigs:
+          enable: 1
+        Directions:
+          enable: 1
+      FunctionalClass:
+        LoreDecorator:
+          enable: 1
+        StringDecorator:
+          enable: 1
+      ItemClass:
+        AbstractItemStack:
+          enable: 1
+        ConstItemStack:
+          enable: 1
+        DisplayItemStack:
+          enable: 1
+        EqProRandomStack:
+          enable: 1
+        EqualInItem:
+          enable: 1
+        EquivalItemStack:
+          enable: 1
+        ItemConsumer:
+          enable: 1
+        ItemCounter:
+          enable: 1
+        ItemGreedyConsumer:
+          enable: 1
+        ItemPusher:
+          enable: 1
+        ItemPusherProvider:
+          enable: 1
+        ItemSlotPusher:
+          enable: 1
+        MultiItemStack:
+          enable: 1
+        ProbItemStack:
+          enable: 1
+        RandAmountStack:
+          enable: 1
+        RandOutItem:
+          enable: 1
+        RandomItemStack:
+          enable: 1
+      MenuClass:
+        CustomItemGroup:
+          '0':
+            key: Utils.UtilClass.MenuClass.CustomItemGroup.0
+            lan: '&c获取物品组物品展示失败'
+          enable: 1
+        CustomMenu:
+          enable: 1
+        CustomMenuHandler:
+          enable: 1
+        DataMenuClickHandler:
+          enable: 1
+        DummyItemGroup:
+          enable: 1
+        GuideCustomMenu:
+          enable: 1
+        GuideMenuHandler:
+          enable: 1
+        MenuFactory:
+          enable: 1
+        MenuPreset:
+          enable: 1
+        PlayerHistoryRecord:
+          enable: 1
+      MultiBlockClass:
+        AbstractMultiBlock:
+          enable: 1
+        AbstractMultiBlockHandler:
+          enable: 1
+        AbstractMultiBlockType:
+          enable: 1
+        CubeMultiBlock:
+          CubeMultiBlock:
+            enable: 1
+          CubeMultiBlockType:
+            '0':
+              key: Utils.UtilClass.MultiBlockClass.CubeMultiBlock.CubeMultiBlockType.0
+              lan: 底部
+            '1':
+              key: Utils.UtilClass.MultiBlockClass.CubeMultiBlock.CubeMultiBlockType.1
+              lan: 盘
+            '2':
+              key: Utils.UtilClass.MultiBlockClass.CubeMultiBlock.CubeMultiBlockType.2
+              lan: 顶部
+            enable: 1
+        MultiBlock:
+          enable: 1
+        MultiBlockHandler:
+          enable: 1
+        MultiBlockService:
+          enable: 1
+        MultiBlockType:
+          enable: 1
+      PdcClass:
+        AbstractStorageType:
+          enable: 1
+      RecipeClass:
+        EnergyProviderOperation:
+          enable: 1
+        ImportRecipes:
+          enable: 1
+        MGeneratorRecipe:
+          enable: 1
+        MultiCraftingOperation:
+          enable: 1
+        RandomMachineOperation:
+          enable: 1
+        SequenceCraftingOperation:
+          '0':
+            key: Utils.UtilClass.RecipeClass.SequenceCraftingOperation.0
+            lan: '&7当前进程信息:'
+          '1':
+            key: Utils.UtilClass.RecipeClass.SequenceCraftingOperation.1
+            lan: '&7当前物品处理时间: '
+          '2':
+            key: Utils.UtilClass.RecipeClass.SequenceCraftingOperation.2
+            lan: '&a阶段输入进程'
+          '3':
+            key: Utils.UtilClass.RecipeClass.SequenceCraftingOperation.3
+            lan: '&a阶段输入进程'
+          '4':
+            key: Utils.UtilClass.RecipeClass.SequenceCraftingOperation.4
+            lan: '&7当前进程信息'
+          '5':
+            key: Utils.UtilClass.RecipeClass.SequenceCraftingOperation.5
+            lan: '&c错误!使用的不是有序输入配方'
+          enable: 1
+        SequenceMachineRecipe:
+          enable: 1
+        ShapedMachineRecipe:
+          enable: 1
+        SimpleCraftingOperation:
+          enable: 1
+        StackMachineRecipe:
+          enable: 1
+      StorageClass:
+        ItemStorageCache:
+          enable: 1
+        StorageType:
+          enable: 1
+      TestItemStack:
+        enable: 1
+      TickerClass:
+        PublicTicking:
+          enable: 1
+        SyncBlockTick:
+          enable: 1
+        Ticking:
+          enable: 1
+    Utils:
+      enable: 1
+    WorldUtils:
+      enable: 1
