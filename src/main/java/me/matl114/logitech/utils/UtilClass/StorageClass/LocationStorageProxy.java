@@ -11,7 +11,7 @@ import javax.annotation.Nonnull;
 public class LocationStorageProxy extends ItemStorageCache {
     Location location;
     boolean lock = false;
-    int lastStorageAmount;
+    long lastStorageAmount;
 
     protected LocationStorageProxy(
           ItemStack item, ItemStack source, ItemMeta sourceMeta, int saveslot, StorageType type, Location location) {
@@ -27,9 +27,9 @@ public class LocationStorageProxy extends ItemStorageCache {
     public void updateStorage() {
         // 这里是代理存储 并不是唯一修改源
         // 需要刷新一下并加上用当前记录-历史记录 的东西
-        int locationNowAmount = ((LocationProxy) storageType).getAmount(location);
-        int delta = locationNowAmount - this.lastStorageAmount;
-        int locationSetAmount = Math.min(getMaxStackCnt(), MathUtils.safeAdd(getStorageAmount(), delta));
+        long locationNowAmount = ((LocationProxy) storageType).getAmount(location);
+        long delta = locationNowAmount - this.lastStorageAmount;
+        long locationSetAmount = Math.min(getMaxStackCnt(), getStorageAmountLong() + delta);
         if (locationSetAmount < 0) {
             // async catcher
             //            Debug.logger("Catch Async Operation in cache Location :",location);

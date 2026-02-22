@@ -118,15 +118,15 @@ public class StorageOperator extends AbstractMachine {
                 return false;
             }
             if (clickAction.isShiftClicked()) {
-                int amount1 = pusher1.getAmount();
-                int amount2 = pusher2.getAmount();
-                int middleAmount = (amount1 / 2) + (amount2 / 2);
-                int diff1 = middleAmount - amount1;
+                long amount1 = pusher1.getAmountLong();
+                long amount2 = pusher2.getAmountLong();
+                long middleAmount = (amount1 / 2) + (amount2 / 2);
+                long diff1 = middleAmount - amount1;
                 if (diff1 != 0) {
                     if (diff1 > 0) {
-                        diff1 = Math.min(diff1, pusher1.getMaxStackCnt() - pusher1.getAmount());
+                        diff1 = Math.min(diff1, pusher1.getMaxStackCnt() - pusher1.getAmountLong());
                     } else {
-                        diff1 = Math.max(diff1, pusher2.getAmount() - pusher2.getMaxStackCnt());
+                        diff1 = Math.max(diff1, pusher2.getAmountLong() - pusher2.getMaxStackCnt());
                     }
                     pusher1.addAmount(diff1);
                     pusher2.addAmount(-diff1);

@@ -255,7 +255,7 @@ public class SmithInterfaceListener implements Listener {
         }
     }
 
-    public Function<CraftingInventory, Pair<MachineRecipe, IntFunction<ItemGreedyConsumer[]>>> CRAFT_PROCESSOR =
+    public Function<CraftingInventory, Pair<MachineRecipe, LongFunction<ItemGreedyConsumer[]>>> CRAFT_PROCESSOR =
             (inventory1) -> {
                 BlockMenu inv =
                         ContainerBlockMenuWrapper.getContainerBlockMenu(inventory1, inventory1.getLocation(), 10);

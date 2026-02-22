@@ -344,9 +344,9 @@ public abstract class AbstractManual extends AbstractMachine implements RecipeLo
             return;
         }
         if (this.energyConsumption > 0) {
-            int craftTime = CraftUtils.calMaxCraftTime(results.getSecondValue(), limit);
+            long craftTime = CraftUtils.calMaxCraftTime(results.getSecondValue(), limit);
             Location loc = inv.getLocation();
-            this.removeCharge(loc, craftTime * this.energyConsumption);
+            this.removeCharge(loc, (int) Math.min(craftTime * this.energyConsumption, Integer.MAX_VALUE));
         }
         CraftUtils.multiUpdateInputMenu(results.getFirstValue(), inv);
         CraftUtils.multiUpdateOutputMenu(results.getSecondValue(), inv);

@@ -359,7 +359,7 @@ public class TransportUtils {
             int[] toSlot,
             boolean isSymm,
             HashSet<ItemStack> blacklist,
-            int translimit) {
+            long translimit) {
         if (isSymm) {
             transportItemSymm(
                     from, fromSlot, to, toSlot, false, false, false, blacklist, translimit, CraftUtils.getpusher);
@@ -408,7 +408,7 @@ public class TransportUtils {
             boolean lazy,
             boolean whitlist,
             HashSet<ItemStack> blacklist,
-            int translimit,
+            long translimit,
             ItemPusherProvider provider) {
         int len = fromSlot.length;
         int len2 = toSlot.length;
@@ -436,7 +436,7 @@ public class TransportUtils {
         boolean[] toRecord = new boolean[54];
         ItemPusher fromPusher;
         ItemPusher toPusher;
-        int fromAmount;
+        long fromAmount;
         // this is indexes
         int maxSizeSlotTill = 0;
         IntFunction<ItemPusher> fromPusherFunc = provider.getMenuInstance(Settings.INPUT, from, fromSlot);
@@ -453,7 +453,7 @@ public class TransportUtils {
                     if (toPusher.getItem() == null) {
                         toPusher.setFrom(fromPusher);
                         // 转运方法,
-                        fromAmount = Math.min(translimit, fromPusher.getAmount());
+                        fromAmount = Math.min(translimit, fromPusher.getAmountLong());
                         toPusher.setAmount(fromAmount);
                         translimit -= fromAmount;
                         // 拆开写转运
@@ -520,7 +520,7 @@ public class TransportUtils {
             boolean lazy,
             boolean whitlist,
             HashSet<ItemStack> blacklist,
-            int translimit,
+            long translimit,
             ItemPusherProvider provider,
             ItemTransportFlow... flows) {
         int len = fromSlot.length;
@@ -552,7 +552,7 @@ public class TransportUtils {
         boolean[] toRecord = new boolean[54];
         ItemPusher fromPusher;
         ItemPusher toPusher;
-        int fromAmount;
+        long fromAmount;
         int[] restrictedInsertSlot;
         IntFunction<ItemPusher> fromPusherFunc = provider.getMenuInstance(Settings.INPUT, from, fromSlot);
         loop:
@@ -578,7 +578,7 @@ public class TransportUtils {
                         if (toPusher.getItem() == null) {
                             toPusher.setFrom(fromPusher);
                             // 转运方法,
-                            fromAmount = Math.min(translimit, fromPusher.getAmount());
+                            fromAmount = Math.min(translimit, fromPusher.getAmountLong());
                             toPusher.setAmount(fromAmount);
                             translimit -= fromAmount;
                             // 拆开写转运
@@ -634,7 +634,7 @@ public class TransportUtils {
             boolean lazy,
             boolean whitlist,
             HashSet<ItemStack> blacklist,
-            int translimit,
+            long translimit,
             ItemPusherProvider provider) {
         int len = fromSlot.length;
         int len2 = toSlot.length;
@@ -666,7 +666,7 @@ public class TransportUtils {
         boolean[] toRecord = new boolean[indexLen];
         ItemPusher fromPusher;
         ItemPusher toPusher;
-        int fromAmount;
+        long fromAmount;
         IntFunction<ItemPusher> fromPusherFunc = provider.getMenuInstance(Settings.INPUT, from, fromSlot);
         loop:
         for (int i = 0; i < len; ++i) {
@@ -733,7 +733,7 @@ public class TransportUtils {
             boolean lazy,
             boolean whitlist,
             HashSet<ItemStack> blacklist,
-            int translimit,
+            long translimit,
             ItemPusherProvider provider) {
         int len = fromSlot.length;
         int len2 = toSlot.length;

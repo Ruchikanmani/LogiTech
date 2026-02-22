@@ -37,14 +37,18 @@ public class ItemPusher extends ItemCounter {
         super.init();
     }
 
-    public ItemPusher(ItemStack item, int maxcnt) {
+    public ItemPusher(ItemStack item, long maxcnt) {
         // can use as storage unit
         super(item);
         this.maxStackCnt = maxcnt;
     }
 
+    public ItemPusher(ItemStack item, int maxcnt) {
+        this(item, (long) maxcnt);
+    }
+
     public boolean safeAddAmount(int amount) {
-        int result = MathUtils.safeAdd(amount, cnt);
+        long result = cnt + (long) amount;
         if (result > maxStackCnt) {
             return false;
         } else {
@@ -63,18 +67,18 @@ public class ItemPusher extends ItemCounter {
     }
 
     public void grab(ItemCounter counter) {
-        long left = ((long) maxStackCnt) - cnt;
-        int amount = counter.getAmount();
+        long left = maxStackCnt - cnt;
+        long amount = counter.getAmountLong();
         // bugfix: should not grab <= 0  itemCounter
         if (amount <= 0) {
             return;
         }
         if (left > amount) {
             addAmount(amount);
-            counter.setAmount(0);
+            counter.setAmount(0L);
         } else {
-            setAmount((int) maxStackCnt);
-            counter.addAmount(-(int) left);
+            setAmount(maxStackCnt);
+            counter.addAmount(-left);
         }
     }
 
@@ -97,23 +101,23 @@ public class ItemPusher extends ItemCounter {
      * @param limit
      * @return
      */
-    public int transportFrom(ItemCounter counter, int limit) {
+    public long transportFrom(ItemCounter counter, long limit) {
         // 该物品槽能转运的最大数量
-        long left = Math.min(((long) maxStackCnt) - cnt, limit);
-        int retLeft;
+        long left = Math.min(maxStackCnt - cnt, limit);
+        long retLeft;
         // 如果这个数量比提供的少
-        if (left > counter.getAmount()) {
+        if (left > counter.getAmountLong()) {
             // 设置真正被传输的数量是... 提供的数量 小于预期left
-            int counterAmount = counter.getAmount();
+            long counterAmount = counter.getAmountLong();
             // counter清空
-            counter.setAmount(0);
+            counter.setAmount(0L);
             // 加上
             addAmount(counterAmount);
             retLeft = counterAmount;
         } else {
             // 否则这个数量提供的比那个多
             // 设置数量+=left
-            retLeft = (int) left;
+            retLeft = left;
             setAmount(cnt + retLeft);
             // left <= counter.getAmount()
             counter.addAmount(-retLeft);

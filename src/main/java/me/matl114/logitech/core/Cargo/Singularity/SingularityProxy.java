@@ -21,7 +21,7 @@ public class SingularityProxy extends StorageType implements LocationProxy {
     }
 
     // public final static
-    protected static final int MAX_AMOUNT = 2147483647;
+    protected static final long MAX_AMOUNT = Long.MAX_VALUE;
 
     public ItemStorageCache getCache(ItemMeta meta) {
 
@@ -37,14 +37,14 @@ public class SingularityProxy extends StorageType implements LocationProxy {
         } else return cache.getItem();
     }
 
-    public int getAmount(Location loc) {
+    public long getAmount(Location loc) {
         ItemStorageCache cache = ItemStorageCache.getCache(loc);
         if (cache == null) {
             return 0;
-        } else return cache.getStorageAmount();
+        } else return cache.getStorageAmountLong();
     }
 
-    public void setAmount(Location loc, int amount) {
+    public void setAmount(Location loc, long amount) {
         ItemStorageCache cache = ItemStorageCache.getCache(loc);
         if (cache != null) {
             cache.setAmount(amount);
@@ -55,7 +55,7 @@ public class SingularityProxy extends StorageType implements LocationProxy {
         }
     }
 
-    public int getMaxAmount(Location loc) {
+    public long getMaxAmount(Location loc) {
         return MAX_AMOUNT;
     }
 
@@ -91,7 +91,7 @@ public class SingularityProxy extends StorageType implements LocationProxy {
         return false;
     }
 
-    public int getStorageMaxSize(ItemMeta meta) {
+    public long getStorageMaxSize(ItemMeta meta) {
         return MAX_AMOUNT;
     }
 
@@ -110,18 +110,18 @@ public class SingularityProxy extends StorageType implements LocationProxy {
         else return getItemStack(loc);
     }
 
-    public int getStorageAmount(ItemMeta meta) {
+    public long getStorageAmount(ItemMeta meta) {
         Location loc = getLocation(meta);
         if (loc == null) return 0;
         else return getAmount(loc);
     }
 
-    public void onStorageAmountWrite(ItemMeta meta, int amount) {
+    public void onStorageAmountWrite(ItemMeta meta, long amount) {
         Location loc = getLocation(meta);
         if (loc != null) setAmount(loc, amount);
     }
 
-    public void onStorageDisplayWrite(ItemMeta meta, int amount) {
+    public void onStorageDisplayWrite(ItemMeta meta, long amount) {
         Location loc = getLocation(meta);
         if (loc != null) updateLocation(loc);
     }

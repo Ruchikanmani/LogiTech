@@ -351,6 +351,29 @@ public class DataCache {
         safeSetData(data, key, String.valueOf(value));
     }
 
+    public static long getCustomDataLong(Location loc, String key, long defaultValue) {
+        SlimefunBlockData data = safeLoadBlock(loc);
+        return getCustomDataLong(data, key, defaultValue);
+    }
+
+    public static void setCustomDataLong(Location loc, String key, long value) {
+        safeSetData(loc, key, String.valueOf(value));
+    }
+
+    public static long getCustomDataLong(SlimefunBlockData data, String key, long defaultValue) {
+        try {
+            String csd = data.getData(key);
+            if (csd != null) return Long.parseLong(csd);
+        } catch (Throwable a) {
+        }
+        data.setData(key, String.valueOf(defaultValue));
+        return defaultValue;
+    }
+
+    public static void setCustomDataLong(SlimefunBlockData data, String key, long value) {
+        safeSetData(data, key, String.valueOf(value));
+    }
+
     public static String getCustomString(Location loc, String key, String defaultValue) {
         SlimefunBlockData data = safeLoadBlock(loc);
         return getCustomString(data, key, defaultValue);

@@ -12,8 +12,7 @@ import org.bukkit.inventory.ItemStack;
  * this consumer have NO cnt limit, when  calling symmetricDiff they will grab allllllll they can get and count num
  */
 public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGreedyConsumer> {
-    private int matchAmount;
-    private int maxStackCnt;
+    private long matchAmount;
     private List<ItemPusher> targetConsumers;
     private static ItemGreedyConsumer INSTANCE = new ItemGreedyConsumer(new ItemStack(Material.STONE));
 
@@ -53,14 +52,14 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
         this.matchAmount = 0;
     }
 
-    public int maxStackSize() {
+    public long maxStackSize() {
         return this.maxStackCnt;
     }
     /**
      * get total amount of matching items
      * @return
      */
-    public int getMatchAmount() {
+    public long getMatchAmount() {
         return matchAmount;
     }
 
@@ -68,12 +67,12 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
      * add total amount of matching items
      * @param matchAmount
      */
-    public void addMatchAmount(int matchAmount) {
-        this.matchAmount = MathUtils.safeAdd(this.matchAmount, matchAmount);
+    public void addMatchAmount(long matchAmount) {
+        this.matchAmount = this.matchAmount + matchAmount;
         dirty = true;
     }
 
-    public void setMatchAmount(int matchAmount) {
+    public void setMatchAmount(long matchAmount) {
         this.matchAmount = matchAmount;
         dirty = true;
     }
@@ -82,12 +81,11 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
      * get pieces of stack matched in total amount
      * @return
      */
-    public int getStackNum() {
-        return MathUtils.safeDivide(this.matchAmount, this.cnt);
+    public long getStackNum() {
+        return cnt == 0 ? 0 : this.matchAmount / this.cnt;
     }
 
-    public void setStackNum(int stackNum) {
-        // TODO may overflow
+    public void setStackNum(long stackNum) {
         matchAmount = stackNum * cnt;
     }
 
@@ -101,7 +99,7 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
      * @param other
      */
     public void consume(ItemPusher other) {
-        this.matchAmount = MathUtils.safeAdd(this.matchAmount, other.getAmount());
+        this.matchAmount = this.matchAmount + other.getAmountLong();
         addRelate(other);
     }
 
@@ -110,7 +108,7 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
      * @param target
      */
     public void push(ItemPusher target) {
-        int tmp = cnt;
+        long tmp = cnt;
         cnt = matchAmount;
         // safe ,will not overflow
         target.grab(this);
@@ -123,8 +121,8 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
      * @param target
      */
     public void grab(ItemPusher target) {
-        int tmp = cnt;
-        cnt = MathUtils.safeAdd(target.getAmount(), tmp);
+        long tmp = cnt;
+        cnt = target.getAmountLong() + tmp;
         dirty = true;
         target.addAmount(tmp - cnt);
     }
@@ -141,7 +139,7 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
     }
 
     public int compareTo(ItemGreedyConsumer o) {
-        return this.getStackNum() - o.getStackNum();
+        return Long.compare(this.getStackNum(), o.getStackNum());
     }
 
     /**
@@ -180,7 +178,7 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
         if (targetConsumers == null) {
             return;
         }
-        int s = cnt;
+        long s = cnt;
         cnt = matchAmount;
         int len = targetConsumers.size();
         ItemPusher target;

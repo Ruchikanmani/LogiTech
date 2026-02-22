@@ -16,11 +16,11 @@ public class NetWorkQuantumMethod {
     public static final MethodAccess<? extends Number> getAmountAccess =
             MethodAccess.ofName("getAmount").printError(true).cast();
     public static final MethodAccess<? extends Number> getLimitAccess =
-            MethodAccess.ofName("getLimit").printError(true).cast();
+            MethodAccess.ofName("getLimitLong").printError(true).cast();
     // todo refactor this part of code
     public static final MethodAccess<?> getSetAmountAccess = new MethodAccess<>(t -> {
                 try {
-                    return t.getClass().getDeclaredMethod("setAmount", int.class);
+                    return t.getClass().getDeclaredMethod("setAmount", long.class);
                 } catch (NoSuchMethodException e) {
                     throw new RuntimeException(e);
                 }

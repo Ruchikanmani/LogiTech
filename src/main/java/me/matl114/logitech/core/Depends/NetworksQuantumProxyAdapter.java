@@ -52,7 +52,7 @@ public class NetworksQuantumProxyAdapter extends NetworksQuantumStorageAdapter i
         return getStorageContent((QuantumCache) cacheMap.get(loc));
     }
 
-    public int getAmount(Location loc) {
+    public long getAmount(Location loc) {
         return getStorageAmount((QuantumCache) cacheMap.get(loc));
     }
 
@@ -62,7 +62,7 @@ public class NetworksQuantumProxyAdapter extends NetworksQuantumStorageAdapter i
         return DataCache.locationFromString(locstr);
     }
 
-    public void setAmount(Location loc, int amount) {
+    public void setAmount(Location loc, long amount) {
         setAmount((QuantumCache) cacheMap.get(loc), amount);
     }
 
@@ -91,11 +91,11 @@ public class NetworksQuantumProxyAdapter extends NetworksQuantumStorageAdapter i
         }
     }
 
-    public int getMaxAmount(Location loc) {
+    public long getMaxAmount(Location loc) {
         return getStorageMaxSize((QuantumCache) cacheMap.get(loc));
     }
 
-    public void onStorageAmountWrite(ItemMeta meta, int amount) {
+    public void onStorageAmountWrite(ItemMeta meta, long amount) {
         QuantumCache cache = getQuantumCache(meta);
         if (cache == null) {
             return;
@@ -110,9 +110,9 @@ public class NetworksQuantumProxyAdapter extends NetworksQuantumStorageAdapter i
         // DataTypeMethods.setCustom(meta, Keys.QUANTUM_STORAGE_INSTANCE, PersistentQuantumStorageType.TYPE,cache);
     }
 
-    public void updateStorageDisplay(ItemMeta meta, ItemStack item, int amount) {}
+    public void updateStorageDisplay(ItemMeta meta, ItemStack item, long amount) {}
 
-    public void onStorageDisplayWrite(ItemMeta meta, int amount) {
+    public void onStorageDisplayWrite(ItemMeta meta, long amount) {
         Location loc = getLocation(meta);
         if (loc == null) return;
         updateLocation(loc);

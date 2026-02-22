@@ -97,7 +97,7 @@ public class ItemSlotPusher extends ItemPusher {
         super.grab(source);
     }
 
-    public int transportFrom(ItemCounter source, int limit) {
+    public long transportFrom(ItemCounter source, long limit) {
         if (this.item == null) {
             if (source != null && source.getItem() != null) {
                 setFrom(source);

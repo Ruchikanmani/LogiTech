@@ -44,7 +44,7 @@ public class ItemStorageCache extends ItemSlotPusher { // extends ItemPusher
     // 短期cache比如存储解析器产物
     protected boolean persistent = false;
     // 这个成员是记录存储数目的
-    protected int storageAmount;
+    protected long storageAmount;
     // 这个成员是用来记录这个cache是否还可以使用的
     // 当玩家尝试从menu里取出存储物品时 该物品将被标记为deprecated 之后的远程访问将不能访问该存储cache
     boolean deprecated = false;
@@ -71,7 +71,7 @@ public class ItemStorageCache extends ItemSlotPusher { // extends ItemPusher
 
     public static ItemStorageCache removeCache(Location loc) {
         // prevent dupe from last record,
-        AbstractIOPort.setStorageAmount(loc, -1, false);
+        AbstractIOPort.setStorageAmount(loc, -1L, false);
         synchronized (lock) {
             return cacheMap.remove(loc);
         }
@@ -84,7 +84,7 @@ public class ItemStorageCache extends ItemSlotPusher { // extends ItemPusher
                 while (it.hasNext()) {
                     var a = it.next();
                     if(a.getValue().isNotValid()){
-                        AbstractIOPort.setStorageAmount(a.getKey(), -1, false);
+                        AbstractIOPort.setStorageAmount(a.getKey(), -1L, false);
                         it.remove();
                     }else{
                         BlockMenu menu = DataCache.getMenu(a.getKey());
@@ -172,7 +172,7 @@ public class ItemStorageCache extends ItemSlotPusher { // extends ItemPusher
             }
             ItemStorageCache cache = new LocationStorageProxy(stored, source, sourceMeta, saveSlot, type, loc);
             cache.setAmount(lp.getAmount(loc));
-            cache.storageAmount = cache.getAmount();
+            cache.storageAmount = cache.getAmountLong();
             cache.dirty = false;
             return cache;
         }
@@ -182,7 +182,7 @@ public class ItemStorageCache extends ItemSlotPusher { // extends ItemPusher
         }
         ItemStorageCache tmp = new ItemStorageCache(inv, stored, source, sourceMeta, saveSlot, type);
         tmp.setAmount(type.getStorageAmount(sourceMeta));
-        tmp.storageAmount = tmp.getAmount();
+        tmp.storageAmount = tmp.getAmountLong();
         tmp.dirty = false;
         if(tmp.isNotValid()){
             return null;
@@ -227,6 +227,10 @@ public class ItemStorageCache extends ItemSlotPusher { // extends ItemPusher
 
 
     public int getStorageAmount() {
+        return this.storageAmount > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) this.storageAmount;
+    }
+
+    public long getStorageAmountLong() {
         return this.storageAmount;
     }
 
@@ -303,13 +307,13 @@ public class ItemStorageCache extends ItemSlotPusher { // extends ItemPusher
                 if (getItem() != null) {
                     item = item.clone();
                     item.setAmount(1);
-                    storageAmount = getAmount();
+                    storageAmount = getAmountLong();
                     storageType.setStorage(sourceMeta, this.getItem());
                     wasNull = false;
                     itemChange();
                 }
             }
-            storageAmount = getAmount();
+            storageAmount = getAmountLong();
         }
     }
 

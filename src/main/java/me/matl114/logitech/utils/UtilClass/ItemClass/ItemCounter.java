@@ -5,11 +5,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class ItemCounter implements Cloneable {
-    protected int cnt;
+    protected long cnt;
     protected boolean dirty;
     protected ItemStack item;
     protected ItemMeta meta = null;
-    protected int maxStackCnt;
+    protected long maxStackCnt;
     // when -1,means item is up to date
     private int cachedItemAmount = -1;
     private static ItemCounter INSTANCE = new ItemCounter(new ItemStack(Material.STONE));
@@ -17,10 +17,10 @@ public class ItemCounter implements Cloneable {
     protected ItemCounter(ItemStack item) {
         dirty = false;
         this.cnt = item.getAmount();
-        this.cachedItemAmount = this.cnt;
+        this.cachedItemAmount = (int) this.cnt;
         this.item = item;
         this.maxStackCnt = item.getMaxStackSize();
-        this.maxStackCnt = maxStackCnt <= 0 ? 2147483646 : maxStackCnt;
+        this.maxStackCnt = maxStackCnt <= 0 ? Long.MAX_VALUE : maxStackCnt;
     }
 
     protected void toNull() {
@@ -35,9 +35,9 @@ public class ItemCounter implements Cloneable {
     protected void fromSource(ItemCounter source, boolean overrideMaxSize) {
         item = source.getItem();
         if (overrideMaxSize) {
-            maxStackCnt = item != null ? item.getMaxStackSize() : 0;
+            maxStackCnt = item != null ? item.getMaxStackSize() : 0L;
         }
-        cnt = 0;
+        cnt = 0L;
         meta = null;
         cachedItemAmount = -1;
         //
@@ -62,19 +62,19 @@ public class ItemCounter implements Cloneable {
         this.item = item;
         this.cnt = item.getAmount();
         this.maxStackCnt = item.getMaxStackSize();
-        this.maxStackCnt = maxStackCnt <= 0 ? 2147483646 : maxStackCnt;
-        this.cachedItemAmount = cnt;
+        this.maxStackCnt = maxStackCnt <= 0 ? Long.MAX_VALUE : maxStackCnt;
+        this.cachedItemAmount = (int) cnt;
     }
 
     protected void init() {
         this.dirty = false;
-        this.cnt = 0;
+        this.cnt = 0L;
         this.item = null;
-        this.maxStackCnt = 0;
+        this.maxStackCnt = 0L;
         this.cachedItemAmount = 0;
     }
 
-    public int getMaxStackCnt() {
+    public long getMaxStackCnt() {
         return maxStackCnt;
     }
 
@@ -137,14 +137,22 @@ public class ItemCounter implements Cloneable {
      * modify recorded amount
      * @param amount
      */
-    public void setAmount(int amount) {
+    public void setAmount(long amount) {
         dirty = dirty || amount != cnt;
         cnt = amount;
+    }
+
+    public void setAmount(int amount) {
+        setAmount((long) amount);
     }
     /**
      * get recorded amount
      */
     public int getAmount() {
+        return cnt > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) cnt;
+    }
+
+    public long getAmountLong() {
         return cnt;
     }
 
@@ -152,9 +160,13 @@ public class ItemCounter implements Cloneable {
      * modify recorded amount
      * @param amount
      */
-    public void addAmount(int amount) {
+    public void addAmount(long amount) {
         cnt += amount;
         dirty = dirty || (amount != 0);
+    }
+
+    public void addAmount(int amount) {
+        addAmount((long) amount);
     }
 
     /**
@@ -184,13 +196,13 @@ public class ItemCounter implements Cloneable {
         if (dirty) {
             // check if cachedItemAmount is not refreshed
             if (cachedItemAmount < 0) {
-                item.setAmount(cnt);
+                item.setAmount((int) Math.min(cnt, Integer.MAX_VALUE));
             } else {
                 int newCachedItemAmount = item.getAmount();
                 cnt += newCachedItemAmount - cachedItemAmount;
-                item.setAmount(cnt);
+                item.setAmount((int) Math.min(cnt, Integer.MAX_VALUE));
             }
-            cachedItemAmount = cnt;
+            cachedItemAmount = (int) Math.min(cnt, Integer.MAX_VALUE);
 
             dirty = false;
         }
@@ -204,7 +216,7 @@ public class ItemCounter implements Cloneable {
         if (cnt < 0) { // stop when cnt < 0 (storage) no meaning
             return;
         }
-        int diff = (other.getAmount() > cnt) ? cnt : other.getAmount();
+        long diff = (other.getAmountLong() > cnt) ? cnt : other.getAmountLong();
         cnt -= diff;
         dirty = true;
         other.addAmount(-diff);
@@ -215,9 +227,9 @@ public class ItemCounter implements Cloneable {
      * @param other
      */
     public void grab(ItemCounter other) {
-        cnt += other.getAmount();
+        cnt += other.getAmountLong();
         dirty = true;
-        other.setAmount(0);
+        other.setAmount(0L);
     }
 
     /**

@@ -72,14 +72,14 @@ public class NetworksQuantumStorageAdapter extends StorageType {
         }
     }
 
-    public int getStorageMaxSize(QuantumCache cache) {
+    public long getStorageMaxSize(QuantumCache cache) {
         if (cache == null) {
             return 0;
         }
         // Method amount=NetWorkQuantumMethod. getLimitMethod(cache);
         try {
             Number num = NetWorkQuantumMethod.getLimitAccess.invoke(cache); // (Integer)amount.invoke(cache);
-            return num.intValue();
+            return num.longValue();
         } catch (Throwable e) {
             disableNetworkQuantum(e);
             return 0;
@@ -87,7 +87,7 @@ public class NetworksQuantumStorageAdapter extends StorageType {
     }
 
     @Override
-    public int getStorageMaxSize(ItemMeta meta) {
+    public long getStorageMaxSize(ItemMeta meta) {
         QuantumCache cache = getQuantumCache(meta);
         return getStorageMaxSize(cache);
     }
@@ -102,7 +102,7 @@ public class NetworksQuantumStorageAdapter extends StorageType {
         throw new NotImplementedException("NetworkQuantumStorage's content shouldn't be set");
     }
 
-    public void setAmount(QuantumCache cache, int amount) {
+    public void setAmount(QuantumCache cache, long amount) {
         if (cache == null) {
             return;
         }
@@ -117,19 +117,19 @@ public class NetworksQuantumStorageAdapter extends StorageType {
     }
 
     @Override
-    public void onStorageAmountWrite(ItemMeta meta, int amount) {
+    public void onStorageAmountWrite(ItemMeta meta, long amount) {
         QuantumCache cache = getQuantumCache(meta);
         setAmount(cache, amount);
         DataTypeMethods.setCustom(meta, Keys.QUANTUM_STORAGE_INSTANCE, PersistentQuantumStorageType.TYPE, cache);
     }
 
     @Override
-    public int getStorageAmount(ItemMeta meta) {
+    public long getStorageAmount(ItemMeta meta) {
         QuantumCache cache = getQuantumCache(meta);
         return getStorageAmount(cache);
     }
 
-    public int getStorageAmount(QuantumCache cache) {
+    public long getStorageAmount(QuantumCache cache) {
         if (cache == null) {
             return 0;
         }
@@ -137,7 +137,7 @@ public class NetworksQuantumStorageAdapter extends StorageType {
 
         try {
             Number res = NetWorkQuantumMethod.getAmountAccess.invoke(cache);
-            return res instanceof Long r ? MathUtils.fromLong(r) : (Integer) res;
+            return res.longValue();
         } catch (Throwable e) {
             disableNetworkQuantum(e);
             return 0;
@@ -169,7 +169,7 @@ public class NetworksQuantumStorageAdapter extends StorageType {
     }
 
     @Override
-    public void onStorageDisplayWrite(ItemMeta meta, int amount) {
+    public void onStorageDisplayWrite(ItemMeta meta, long amount) {
         var cache = getQuantumCache(meta);
         if (cache == null) {
             return;

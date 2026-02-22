@@ -25,7 +25,7 @@ public class SingularityStorage extends StorageType {
     public static final String AMOUNT_DISPLAY_PREFIX = AddUtils.resolveColor("&x&E&B&3&3&E&B压缩数量: &f");
     public static final NamespacedKey KEY_ITEM = AddUtils.getNameKey("sin_item");
     public static final NamespacedKey KEY_AMOUNT = AddUtils.getNameKey("sin_amount");
-    protected static final int MAX_AMOUNT = 2147483647;
+    protected static final long MAX_AMOUNT = Long.MAX_VALUE;
 
     public boolean isStorage(ItemMeta meta) {
         return meta.getPersistentDataContainer().has(KEY_AMOUNT)
@@ -42,14 +42,14 @@ public class SingularityStorage extends StorageType {
         return sfitem instanceof Singularity;
     }
 
-    public int getStorageMaxSize(ItemMeta meta) {
+    public long getStorageMaxSize(ItemMeta meta) {
         return MAX_AMOUNT;
     }
 
     public void setStorage(ItemMeta meta, ItemStack item) {
         if (item != null) {
             clearStorage(meta);
-            meta.getPersistentDataContainer().set(KEY_AMOUNT, PersistentDataType.INTEGER, 0);
+            meta.getPersistentDataContainer().set(KEY_AMOUNT, PersistentDataType.LONG, 0L);
             ItemStack tmp = AddUtils.getCleaned(item);
             tmp.setAmount(1);
             meta.getPersistentDataContainer().set(KEY_ITEM, AbstractStorageType.TYPE, tmp);
@@ -102,21 +102,26 @@ public class SingularityStorage extends StorageType {
         return meta.getPersistentDataContainer().get(KEY_ITEM, AbstractStorageType.TYPE);
     }
 
-    public int getStorageAmount(ItemMeta meta) {
+    public long getStorageAmount(ItemMeta meta) {
+        try {
+            Long e = meta.getPersistentDataContainer().get(KEY_AMOUNT, PersistentDataType.LONG);
+            if (e != null) return e;
+        } catch (Throwable ignored) {
+        }
+        // 向后兼容: 旧存档使用 INTEGER 类型
         try {
             Integer e = meta.getPersistentDataContainer().get(KEY_AMOUNT, PersistentDataType.INTEGER);
-            if (e == null) return 0;
-            return e;
-        } catch (Throwable e) {
-            return 0;
+            if (e != null) return e;
+        } catch (Throwable ignored) {
         }
+        return 0;
     }
 
-    public void onStorageAmountWrite(ItemMeta meta, int amount) {
-        meta.getPersistentDataContainer().set(KEY_AMOUNT, PersistentDataType.INTEGER, amount);
+    public void onStorageAmountWrite(ItemMeta meta, long amount) {
+        meta.getPersistentDataContainer().set(KEY_AMOUNT, PersistentDataType.LONG, amount);
     }
 
-    public void onStorageDisplayWrite(ItemMeta meta, int amount) {
+    public void onStorageDisplayWrite(ItemMeta meta, long amount) {
 
         List<String> lore = meta.hasLore() ? meta.getLore() : new ArrayList<>();
         if (lore.size() > 0) {
@@ -127,5 +132,5 @@ public class SingularityStorage extends StorageType {
         meta.setLore(lore);
     }
 
-    public void updateStorageDisplay(ItemMeta meta, ItemStack item, int amount) {}
+    public void updateStorageDisplay(ItemMeta meta, ItemStack item, long amount) {}
 }

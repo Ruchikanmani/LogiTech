@@ -3,6 +3,8 @@
 /sonar/
 /.settings/
 /target/
+/matlib/
+/NetworksExpansion/
 /.idea/
 /.vscode/
 

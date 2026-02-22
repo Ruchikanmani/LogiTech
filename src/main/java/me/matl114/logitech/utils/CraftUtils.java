@@ -23,6 +23,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.IntFunction;
+import java.util.function.LongFunction;
 
 @SuppressWarnings("all")
 public class CraftUtils {
@@ -274,7 +275,7 @@ public class CraftUtils {
         if (cnt > len2) return null;
         ItemGreedyConsumer[] result = new ItemGreedyConsumer[cnt];
         // 模拟时间加速 减少~
-        maxMatchCount = calMaxCraftAfterAccelerate(maxMatchCount, recipe.getTicks());
+        maxMatchCount = (int) calMaxCraftAfterAccelerate(maxMatchCount, recipe.getTicks());
         if (maxMatchCount == 0) {
             return null;
         }
@@ -387,12 +388,12 @@ public class CraftUtils {
      * @return
      */
     public static Pair<ItemGreedyConsumer[], ItemGreedyConsumer[]> countMultiRecipe(
-            BlockMenu inv, int[] input, int[] output, MachineRecipe recipe, int limit) {
+            BlockMenu inv, int[] input, int[] output, MachineRecipe recipe, long limit) {
         return countMultiRecipe(inv, input, output, recipe, limit, getpusher);
     }
 
     public static Pair<ItemGreedyConsumer[], ItemGreedyConsumer[]> countMultiRecipe(
-            BlockMenu inv, int[] input, int[] output, MachineRecipe recipe, int limit, ItemPusherProvider pusher) {
+            BlockMenu inv, int[] input, int[] output, MachineRecipe recipe, long limit, ItemPusherProvider pusher) {
         int len = input.length;
         ItemStack[] recipeInput = recipe.getInput();
         DynamicArray<ItemPusher> inputCounters =
@@ -400,7 +401,7 @@ public class CraftUtils {
         int cnt = recipeInput.length;
 
         ItemGreedyConsumer[] recipeCounter = new ItemGreedyConsumer[cnt];
-        int maxAmount = limit;
+        long maxAmount = limit;
         final boolean[] visited = new boolean[len];
         for (int i = 0; i < cnt; ++i) {
             recipeCounter[i] = getGreedyConsumer(recipeInput[i]);
@@ -417,11 +418,11 @@ public class CraftUtils {
                 if (CraftUtils.matchItemCounter(itemCounter2, recipeCounter[i], false)) {
                     // 如果匹配 将其加入...list,并算入matchCnt
                     recipeCounter[i].addRelate(itemCounter2);
-                    recipeCounter[i].addMatchAmount(itemCounter2.getAmount());
+                    recipeCounter[i].addMatchAmount(itemCounter2.getAmountLong());
                     if (recipeCounter[i].getStackNum() >= maxAmount) break;
                 }
             }
-            int stackAmount = recipeCounter[i].getStackNum();
+            long stackAmount = recipeCounter[i].getStackNum();
             if (stackAmount >= maxAmount) continue;
             maxAmount = Math.min(maxAmount, stackAmount);
             if (maxAmount <= 0) return null;
@@ -442,7 +443,7 @@ public class CraftUtils {
      * @return
      */
     public static ItemGreedyConsumer[] countMultiOutput(
-            ItemGreedyConsumer[] inputInfo, BlockMenu inv, int[] output, MachineRecipe recipe, int limit) {
+            ItemGreedyConsumer[] inputInfo, BlockMenu inv, int[] output, MachineRecipe recipe, long limit) {
         return countMultiOutput(inputInfo, inv, output, recipe, limit, getpusher);
     }
 
@@ -461,7 +462,7 @@ public class CraftUtils {
             BlockMenu inv,
             int[] output,
             MachineRecipe recipe,
-            int limit,
+            long limit,
             ItemPusherProvider pusher) {
 
         int len2 = output.length;
@@ -470,7 +471,7 @@ public class CraftUtils {
         ItemStack[] recipeOutput = recipe.getOutput();
         int cnt2 = recipeOutput.length;
         ItemGreedyConsumer[] recipeCounter2 = new ItemGreedyConsumer[cnt2];
-        int maxAmount2 = limit;
+        long maxAmount2 = limit;
         if (cnt2 <= 0 || maxAmount2 <= 0) {
             return null;
         } // 优化 当一个输出的时候 直接输出 匹配最大的匹配数
@@ -484,11 +485,11 @@ public class CraftUtils {
                     itemCounter.setFrom(recipeCounter2[0]);
                     recipeCounter2[0].addRelate(itemCounter);
                     recipeCounter2[0].addMatchAmount(recipeCounter2[0].getMaxStackCnt());
-                } else if (itemCounter.getMaxStackCnt() <= itemCounter.getAmount()) {
+                } else if (itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
                     continue;
                 } else if (CraftUtils.matchItemCounter(recipeCounter2[0], itemCounter, false)) {
                     recipeCounter2[0].addRelate(itemCounter);
-                    recipeCounter2[0].addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmount());
+                    recipeCounter2[0].addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmountLong());
                 }
                 if (recipeCounter2[0].getStackNum() >= maxAmount2) {
                     break;
@@ -523,7 +524,7 @@ public class CraftUtils {
                         itemCounter2.addMatchAmount(itemCounter2.getMaxStackCnt());
                         hasNextPushSlot = true;
                         break;
-                    } else if (itemCounter.isDirty() || itemCounter.getMaxStackCnt() <= itemCounter.getAmount()) {
+                    } else if (itemCounter.isDirty() || itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
                         continue;
                     } else if (CraftUtils.matchItemCounter(itemCounter2, itemCounter, false)) {
                         // what the fuck????
@@ -531,7 +532,7 @@ public class CraftUtils {
                         // itemCounter.setFrom(itemCounter2);
                         itemCounter2.addRelate(itemCounter);
                         // must use itemCounter.getMaxStackCnt because ItemStorage
-                        itemCounter2.addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmount());
+                        itemCounter2.addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmountLong());
                         hasNextPushSlot = true;
                         break;
                     }
@@ -570,14 +571,14 @@ public class CraftUtils {
      */
     @Deprecated
     public static ItemGreedyConsumer[] countMultiOutput(
-            ItemGreedyConsumer[] inputInfo, ItemPusher[] output, MachineRecipe recipe, int limit) {
+            ItemGreedyConsumer[] inputInfo, ItemPusher[] output, MachineRecipe recipe, long limit) {
 
         int len2 = output.length;
         int outputSlotpointer = 0;
         ItemStack[] recipeOutput = recipe.getOutput();
         int cnt2 = recipeOutput.length;
         ItemGreedyConsumer[] recipeCounter2 = new ItemGreedyConsumer[cnt2];
-        int maxAmount2 = limit;
+        long maxAmount2 = limit;
         if (cnt2 <= 0) {
             return recipeCounter2;
         } // 优化 当一个输出的时候 直接输出 匹配最大的匹配数
@@ -593,11 +594,11 @@ public class CraftUtils {
                     itemCounter.setFrom(recipeCounter2[0]);
                     recipeCounter2[0].addRelate(itemCounter);
                     recipeCounter2[0].addMatchAmount(recipeCounter2[0].getMaxStackCnt());
-                } else if (itemCounter.getMaxStackCnt() <= itemCounter.getAmount()) {
+                } else if (itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
                     continue;
                 } else if (CraftUtils.matchItemCounter(recipeCounter2[0], itemCounter, false)) {
                     recipeCounter2[0].addRelate(itemCounter);
-                    recipeCounter2[0].addMatchAmount(recipeCounter2[0].getMaxStackCnt() - itemCounter.getAmount());
+                    recipeCounter2[0].addMatchAmount(recipeCounter2[0].getMaxStackCnt() - itemCounter.getAmountLong());
                 }
                 if (recipeCounter2[0].getStackNum() >= maxAmount2) {
                     break;
@@ -626,11 +627,11 @@ public class CraftUtils {
                 boolean hasNextPushSlot = false;
                 for (int j = 0; j < len2; ++j) {
                     ItemPusher itemCounter = output[j];
-                    if (itemCounter.isDirty() || itemCounter.getMaxStackCnt() <= itemCounter.getAmount()) {
+                    if (itemCounter.isDirty() || itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
                         continue;
                     } else if (CraftUtils.matchItemCounter(itemCounter2, itemCounter, false)) {
                         itemCounter2.addRelate(itemCounter);
-                        itemCounter2.addMatchAmount(itemCounter2.getMaxStackCnt() - itemCounter.getAmount());
+                        itemCounter2.addMatchAmount(itemCounter2.getMaxStackCnt() - itemCounter.getAmountLong());
                         hasNextPushSlot = true;
                         break;
                     }
@@ -714,12 +715,12 @@ public class CraftUtils {
             outputItem = slotCounters[i];
             // consume mode
             outputItem.syncData();
-            int maxAmount = outputItem.getMaxStackCnt();
+            long maxAmount = outputItem.getMaxStackCnt();
             for (int j = 0; j < slots.length; ++j) {
                 previewItem = inv.getItemInSlot(slots[j]);
                 if (previewItem == null) {
                     // 是空槽 绝对不可能是存储 直接上 不要创建缓存
-                    int amount = Math.min(outputItem.getAmount(), maxAmount);
+                    int amount = (int) Math.min(outputItem.getAmount(), maxAmount);
                     inv.replaceExistingItem(slots[j], outputItem.getItem(), false);
                     previewItem = inv.getItemInSlot(slots[j]);
                     if (previewItem != null) {
@@ -744,7 +745,7 @@ public class CraftUtils {
                             itemCounter.updateMenu(inv);
                             itemCounter.setDirty(true);
                             hasChanged = true;
-                        } else if (itemCounter.getAmount() >= itemCounter.getMaxStackCnt()) {
+                        } else if (itemCounter.getAmountLong() >= itemCounter.getMaxStackCnt()) {
                             continue;
                         } else if (matchItemCounter(outputItem, itemCounter, false)) {
                             itemCounter.grab(outputItem);
@@ -788,7 +789,7 @@ public class CraftUtils {
         ItemGreedyConsumer[] slotCounters = new ItemGreedyConsumer[items.length];
         for (int i = 0; i < items.length; ++i) {
             slotCounters[i] = CraftUtils.getGreedyConsumer(items[i]);
-            slotCounters[i].setMatchAmount(slotCounters[i].getAmount() * multiple);
+            slotCounters[i].setMatchAmount(slotCounters[i].getAmountLong() * multiple);
         }
         return multiForcePush(slotCounters, inv, slots, pusher);
     }
@@ -811,10 +812,10 @@ public class CraftUtils {
             // consume mode
             for (int j = 0; j < slots.length; ++j) {
                 previewItem = inv.getItemInSlot(slots[j]);
-                int maxAmount = outputItem.getMaxStackCnt();
+                long maxAmount = outputItem.getMaxStackCnt();
                 if (previewItem == null) {
                     // 多倍匹配用的是MatchAmount
-                    int amount = Math.min(outputItem.getMatchAmount(), maxAmount);
+                    int amount = (int) Math.min(outputItem.getMatchAmount(), maxAmount);
                     inv.replaceExistingItem(slots[j], outputItem.getItem(), false);
                     previewItem = inv.getItemInSlot(slots[j]);
                     if (previewItem != null) {
@@ -838,7 +839,7 @@ public class CraftUtils {
                             itp.setDirty(true);
                             hasChanged = true;
 
-                        } else if (itp.getAmount() >= itp.getMaxStackCnt()) {
+                        } else if (itp.getAmountLong() >= itp.getMaxStackCnt()) {
                             continue;
                         } else if (matchItemCounter(outputItem, itp, false)) {
                             outputItem.push(itp);
@@ -1226,7 +1227,7 @@ public class CraftUtils {
         return null;
     }
 
-    public static int calMaxCraftTime(ItemGreedyConsumer[] recipes, int limit) {
+    public static long calMaxCraftTime(ItemGreedyConsumer[] recipes, long limit) {
         int len = recipes.length;
         if (len != 0) {
             for (int i = 0; i < len; ++i) {
@@ -1236,7 +1237,7 @@ public class CraftUtils {
         } else return limit;
     }
 
-    public static int calMaxCraftAfterAccelerate(int maxCraftTime, int tick) {
+    public static long calMaxCraftAfterAccelerate(long maxCraftTime, int tick) {
         return tick == 0 ? maxCraftTime : ((maxCraftTime <= tick) ? 1 : (maxCraftTime / (tick + 1)));
     }
     /**
@@ -1330,12 +1331,12 @@ public class CraftUtils {
      * return null;
      * }
      **/
-    public static int matchShapedRecipe(ItemPusher[] input, MachineRecipe recipe, int limit) {
+    public static long matchShapedRecipe(ItemPusher[] input, MachineRecipe recipe, long limit) {
         ItemStack[] recipeInput = recipe.getInput();
         int len = input.length;
         int len2 = recipeInput.length;
         if (len < len2) return 0;
-        int max = limit;
+        long max = limit;
         for (int i = 0; i < len2; ++i) {
             if (input[i] == null) {
                 if (recipeInput[i] == null) {
@@ -1343,17 +1344,17 @@ public class CraftUtils {
                 } else return 0;
             } else if (!matchItemStack(recipeInput[i], input[i], false)) return 0;
             else {
-                max = Math.min(max, input[i].getAmount() / recipeInput[i].getAmount());
+                max = Math.min(max, input[i].getAmountLong() / recipeInput[i].getAmount());
             }
         }
         return max;
     }
 
-    public static Pair<MachineRecipe, IntFunction<ItemGreedyConsumer[]>> matchNextShapedRecipe(
+    public static Pair<MachineRecipe, LongFunction<ItemGreedyConsumer[]>> matchNextShapedRecipe(
             BlockMenu inv,
             int[] inputs,
             List<MachineRecipe> recipes,
-            int limit,
+            long limit,
             boolean useHistory,
             Settings order,
             ItemPusherProvider pusher) {
@@ -1386,18 +1387,18 @@ public class CraftUtils {
 
         int __iter = __index;
         MachineRecipe checkRecipe = recipes.get(__iter);
-        int craftAmount = matchShapedRecipe(inputItem, checkRecipe, limit);
+        long craftAmount = matchShapedRecipe(inputItem, checkRecipe, limit);
         if (craftAmount > 0) {
-            final int finalAmount = craftAmount;
+            final long finalAmount = craftAmount;
             final MachineRecipe finalRecipe = checkRecipe;
             final int index = __iter;
             return new Pair<>(checkRecipe, (newLimit) -> {
-                int amount = Math.min(newLimit, finalAmount);
+                long amount = Math.min(newLimit, finalAmount);
                 ItemStack[] recipeInput = finalRecipe.getInput();
                 int len2 = recipeInput.length;
                 for (int i = 0; i < len2; ++i) {
                     if (inputItem[i] != null) {
-                        inputItem[i].setAmount(inputItem[i].getAmount() - amount * recipeInput[i].getAmount());
+                        inputItem[i].setAmount(inputItem[i].getAmountLong() - amount * recipeInput[i].getAmount());
                         inputItem[i].updateMenu(inv);
                     }
                 }
@@ -1418,16 +1419,16 @@ public class CraftUtils {
             checkRecipe = recipes.get(__iter);
             craftAmount = matchShapedRecipe(inputItem, checkRecipe, limit);
             if (craftAmount > 0) {
-                final int finalAmount = craftAmount;
+                final long finalAmount = craftAmount;
                 final MachineRecipe finalRecipe = checkRecipe;
                 final int index = __iter;
                 return new Pair<>(checkRecipe, (newLimit) -> {
-                    int amount = Math.min(newLimit, finalAmount);
+                    long amount = Math.min(newLimit, finalAmount);
                     ItemStack[] recipeInput = finalRecipe.getInput();
                     int len2 = recipeInput.length;
                     for (int i = 0; i < len2; ++i) {
                         if (inputItem[i] != null) {
-                            inputItem[i].setAmount(inputItem[i].getAmount() - amount * recipeInput[i].getAmount());
+                            inputItem[i].setAmount(inputItem[i].getAmountLong() - amount * recipeInput[i].getAmount());
                             inputItem[i].updateMenu(inv);
                         }
                     }
@@ -1453,16 +1454,16 @@ public class CraftUtils {
             checkRecipe = recipes.get(__iter);
             craftAmount = matchShapedRecipe(inputItem, checkRecipe, limit);
             if (craftAmount > 0) {
-                final int finalAmount = craftAmount;
+                final long finalAmount = craftAmount;
                 final MachineRecipe finalRecipe = checkRecipe;
                 final int index = __iter;
                 return new Pair<>(checkRecipe, (newLimit) -> {
-                    int amount = Math.min(newLimit, finalAmount);
+                    long amount = Math.min(newLimit, finalAmount);
                     ItemStack[] recipeInput = finalRecipe.getInput();
                     int len2 = recipeInput.length;
                     for (int i = 0; i < len2; ++i) {
                         if (inputItem[i] != null) {
-                            inputItem[i].setAmount(inputItem[i].getAmount() - amount * recipeInput[i].getAmount());
+                            inputItem[i].setAmount(inputItem[i].getAmountLong() - amount * recipeInput[i].getAmount());
                             inputItem[i].updateMenu(inv);
                         }
                     }
@@ -1487,9 +1488,9 @@ public class CraftUtils {
             ItemPusher[] inputItem,
             int[] outputs,
             MachineRecipe checkRecipe,
-            int craftAmount,
+            long craftAmount,
             ItemPusherProvider pusher) {
-        int finalAmount = craftAmount;
+        long finalAmount = craftAmount;
         ItemGreedyConsumer[] outputCounters = null;
         if (outputs.length != 0) {
             outputCounters =
@@ -1501,7 +1502,7 @@ public class CraftUtils {
         int len2 = recipeInput.length;
         for (int i = 0; i < len2; ++i) {
             if (inputItem[i] != null) {
-                inputItem[i].setAmount(inputItem[i].getAmount() - finalAmount * recipeInput[i].getAmount());
+                inputItem[i].setAmount(inputItem[i].getAmountLong() - finalAmount * recipeInput[i].getAmount());
                 inputItem[i].updateMenu(inv);
             }
         }
@@ -1519,7 +1520,7 @@ public class CraftUtils {
             int[] inputs,
             int[] outputs,
             List<MachineRecipe> recipes,
-            int limit,
+            long limit,
             boolean useHistory,
             Settings order,
             ItemPusherProvider pusher) {
@@ -1553,7 +1554,7 @@ public class CraftUtils {
 
         int __iter = __index;
         MachineRecipe checkRecipe = recipes.get(__iter);
-        int craftAmount = matchShapedRecipe(inputItem, checkRecipe, limit);
+        long craftAmount = matchShapedRecipe(inputItem, checkRecipe, limit);
         if (craftAmount > 0) {
 
             if (useHistory) {
@@ -1628,7 +1629,7 @@ public class CraftUtils {
 
         int __iter = __index;
         MachineRecipe checkRecipe = recipes.get(__iter);
-        int craftAmount = matchShapedRecipe(inputItem, checkRecipe, 1);
+        long craftAmount = matchShapedRecipe(inputItem, checkRecipe, 1);
         if (craftAmount > 0) {
             if (useHistory) {
                 DataCache.setLastRecipe(inv.getLocation(), __iter);

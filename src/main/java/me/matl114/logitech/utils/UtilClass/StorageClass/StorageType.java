@@ -110,13 +110,13 @@ public abstract class StorageType {
 
     public abstract void clearStorage(ItemMeta meta);
 
-    public abstract int getStorageAmount(ItemMeta meta);
+    public abstract long getStorageAmount(ItemMeta meta);
 
-    public abstract int getStorageMaxSize(ItemMeta meta);
+    public abstract long getStorageMaxSize(ItemMeta meta);
 
-    public abstract void onStorageAmountWrite(ItemMeta meta, int amount);
+    public abstract void onStorageAmountWrite(ItemMeta meta, long amount);
 
-    public abstract void onStorageDisplayWrite(ItemMeta meta, int amount);
+    public abstract void onStorageDisplayWrite(ItemMeta meta, long amount);
 
     public boolean isStorageProxy() {
         return false;

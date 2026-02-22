@@ -473,7 +473,7 @@ public class AdvancedManual extends AbstractBlock {
                 BlockMenu inv = ContainerUtils.getPlayerBackPackWrapper(player);
                 Pair<ItemGreedyConsumer[], ItemGreedyConsumer[]> results =
                         CraftUtils.countMultiRecipe(inv, craftableSlots, craftableSlots, recipe, limit, CRAFT_PROVIDER);
-                int count = 0;
+                long count = 0;
                 if (results != null) {
                     count = CraftUtils.calMaxCraftTime(results.getSecondValue(), limit);
                     CraftUtils.multiUpdateInputMenu(results.getFirstValue(), inv);

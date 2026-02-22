@@ -165,7 +165,7 @@ public abstract class AbstractAdvancedProcessor extends AbstractMachine
                 }
             }
             // 最小能减到的刻数
-            int craftlimit = CraftUtils.calMaxCraftTime(nextQ.getSecondValue(), maxCraftlimit);
+            long craftlimit = CraftUtils.calMaxCraftTime(nextQ.getSecondValue(), maxCraftlimit);
             // 要末time=0 要末craftlimit=1 两者在这里都一样,不需要再修改time
             // 如果底下这玩意还能给你减,那就craftlimit=0需要考虑,craftlimit=0直接堵上了 否则都一样time=0无区别
             ItemGreedyConsumer[] nextP = CraftUtils.countMultiOutput(

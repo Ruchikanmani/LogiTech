@@ -187,8 +187,8 @@ public abstract class AbstractWorkBench extends AbstractMachine {
                 CRAFT_PROVIDER);
         if (outputResult != null) {
             if (this.energyConsumption > 0) {
-                int craftTime = outputResult.getSecondValue()[0].getStackNum();
-                removeCharge(loc, craftTime * this.energyConsumption);
+                long craftTime = outputResult.getSecondValue()[0].getStackNum();
+                removeCharge(loc, (int) Math.min(craftTime * this.energyConsumption, Integer.MAX_VALUE));
             }
             CraftUtils.multiUpdateOutputMenu(outputResult.getSecondValue(), inv);
         }

@@ -7,11 +7,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 public interface LocationProxy {
     public ItemStack getItemStack(Location loc);
 
-    public int getAmount(Location loc);
+    public long getAmount(Location loc);
 
-    public void setAmount(Location loc, int amount);
+    public void setAmount(Location loc, long amount);
 
-    public int getMaxAmount(Location loc);
+    public long getMaxAmount(Location loc);
 
     public Location getLocation(ItemMeta meta);
 

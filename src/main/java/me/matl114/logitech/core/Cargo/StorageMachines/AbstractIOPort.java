@@ -119,7 +119,7 @@ public abstract class AbstractIOPort extends AbstractMachine {
         if (stack == null || stack.getAmount() != 1) {
             ItemStorageCache.removeCache(inv.getLocation());
         } else {
-            int history = getStorageAmount(inv.getLocation());
+            long history = getStorageAmount(inv.getLocation());
             if (history >= 0) {
                 ItemStorageCache cache = ItemStorageCache.getOrCreate(
                       inv, stack, stack.getItemMeta(), getStorageSlot(), i -> !i.isStorageProxy());
@@ -171,11 +171,11 @@ public abstract class AbstractIOPort extends AbstractMachine {
         }
     }
 
-    public static int getStorageAmount(Location loc) {
-        return DataCache.getCustomData(loc, "amt", -1);
+    public static long getStorageAmount(Location loc) {
+        return DataCache.getCustomDataLong(loc, "amt", -1L);
     }
 
-    public static void setStorageAmount(Location loc, int t, boolean withException) {
+    public static void setStorageAmount(Location loc, long t, boolean withException) {
         SlimefunBlockData data = DataCache.safeGetBlockCacheWithLoad(loc);
         if (data != null && SlimefunItem.getById(data.getSfId()) instanceof AbstractIOPort) {
             setAmount(data, t);
@@ -185,8 +185,8 @@ public abstract class AbstractIOPort extends AbstractMachine {
         }
     }
 
-    protected static void setAmount(SlimefunBlockData data, int t) {
-        DataCache.setCustomData(data, "amt", t);
+    protected static void setAmount(SlimefunBlockData data, long t) {
+        DataCache.setCustomDataLong(data, "amt", t);
     }
 
     public void process(Block b, BlockMenu menu, SlimefunBlockData data) {

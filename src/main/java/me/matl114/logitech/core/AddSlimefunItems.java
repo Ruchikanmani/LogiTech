@@ -7302,7 +7302,7 @@ public class AddSlimefunItems {
         }
 
         public int getCraftLimit(Block b, BlockMenu menu) {
-            return super.getCraftLimit(b, menu) * 4;
+            return (int) Math.min((long) super.getCraftLimit(b, menu) * 4L, Integer.MAX_VALUE);
         }
     }.register();
 
