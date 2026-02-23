@@ -135,6 +135,74 @@ public class MachineRecipeUtils {
         return new StackMachineRecipe(tick, stackIn(ipnut), stackIn(output));
     }
 
+    /**
+     * stackFrom with noConsume support. noConsumeIndices are indices in the original input array.
+     * After stackIn merging, the noConsume indices are re-mapped to the merged array.
+     */
+    public static StackMachineRecipe stackFrom(int tick, ItemStack[] input, ItemStack[] output, Set<Integer> noConsumeIndices) {
+        if (noConsumeIndices == null || noConsumeIndices.isEmpty()) {
+            return stackFrom(tick, input, output);
+        }
+        // 手动执行 stackIn 并跟踪 noConsume 索引映射
+        LinkedHashSet<ItemCounter> stacks = new LinkedHashSet<>();
+        // 记录每个合并后位置是否为 noConsume
+        List<Boolean> mergedNoConsume = new ArrayList<>();
+        boolean __flag;
+        for (int i = 0; i < input.length; i++) {
+            ItemStack a = input[i];
+            if (a == null || ((!(a instanceof AbstractItemStack)) && a.getType().isAir())) continue;
+            boolean isNoConsume = noConsumeIndices.contains(i);
+            ItemCounter ac = ItemCounter.get(AddUtils.getCopy(a));
+            if (ac.getItem() instanceof RandOutItem) {
+                stacks.add(ac);
+                mergedNoConsume.add(isNoConsume);
+                continue;
+            }
+            __flag = false;
+            int mergeIdx = 0;
+            for (ItemCounter stack : stacks) {
+                if (CraftUtils.matchItemStack(a, stack, true)) {
+                    stack.addAmount(a.getAmount());
+                    // 如果合并的任一原始输入是 noConsume，则合并后也是 noConsume
+                    if (isNoConsume) {
+                        mergedNoConsume.set(mergeIdx, true);
+                    }
+                    __flag = true;
+                    break;
+                }
+                mergeIdx++;
+            }
+            if (!__flag) {
+                stacks.add(ac);
+                mergedNoConsume.add(isNoConsume);
+            }
+        }
+        ItemStack[] mergedInput = new ItemStack[stacks.size()];
+        int cnt = 0;
+        for (ItemCounter stackCounter : stacks) {
+            ItemStack a = stackCounter.getItem();
+            if (a instanceof EquivalItemStack eq) {
+                EquivalItemStack eqCopy = eq.copy();
+                eqCopy.setEqualAmount(stackCounter.getAmount());
+                mergedInput[cnt] = eqCopy;
+            } else if (stackCounter.getItem() instanceof RandOutItem) {
+                mergedInput[cnt] = stackCounter.getItem();
+            } else {
+                mergedInput[cnt] = stackCounter.getItem();
+                mergedInput[cnt].setAmount(stackCounter.getAmount());
+            }
+            ++cnt;
+        }
+        // 构建合并后的 noConsume 索引集合
+        Set<Integer> mergedNoConsumeSet = new HashSet<>();
+        for (int i = 0; i < mergedNoConsume.size(); i++) {
+            if (mergedNoConsume.get(i)) {
+                mergedNoConsumeSet.add(i);
+            }
+        }
+        return new StackMachineRecipe(tick, mergedInput, stackIn(output), mergedNoConsumeSet);
+    }
+
     public static StackMachineRecipe stackFromPair(int tick, Pair<ItemStack[], ItemStack[]> recipe) {
         return new StackMachineRecipe(tick, stackIn(recipe.getFirstValue()), stackIn(recipe.getSecondValue()));
     }

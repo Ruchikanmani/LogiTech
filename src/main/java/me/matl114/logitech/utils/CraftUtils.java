@@ -8,6 +8,7 @@ import me.matl114.logitech.core.CustomSlimefunItem;
 import me.matl114.logitech.manager.Schedules;
 import me.matl114.logitech.utils.Algorithms.DynamicArray;
 import me.matl114.logitech.utils.UtilClass.ItemClass.*;
+import me.matl114.logitech.utils.UtilClass.RecipeClass.StackMachineRecipe;
 import me.matl114.matlib.utils.version.VersionedMeta;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -274,6 +275,11 @@ public class CraftUtils {
         int cnt = recipeInput.length;
         if (cnt > len2) return null;
         ItemGreedyConsumer[] result = new ItemGreedyConsumer[cnt];
+        // 获取 noConsume 标记
+        Set<Integer> noConsumeIndices = Collections.emptySet();
+        if (recipe instanceof StackMachineRecipe smr) {
+            noConsumeIndices = smr.getNoConsumeInputs();
+        }
         // 模拟时间加速 减少~
         maxMatchCount = (int) calMaxCraftAfterAccelerate(maxMatchCount, recipe.getTicks());
         if (maxMatchCount == 0) {
@@ -282,7 +288,11 @@ public class CraftUtils {
         // int maxAmount;
         final boolean[] visited = new boolean[len2];
         for (int i = 0; i < cnt; ++i) {
+            boolean isNoConsume = noConsumeIndices.contains(i);
             ItemGreedyConsumer itemCounter = getGreedyConsumer(recipeInput[i]);
+            if (isNoConsume) {
+                itemCounter.setNoConsume(true);
+            }
             // in case some idiots! put 0 in recipe
             // maxAmount=Math.min( itemCounter.getAmount()*maxMatchCount,1);
             for (int j = 0; j < len2; ++j) {
@@ -296,7 +306,8 @@ public class CraftUtils {
                 }
                 if (CraftUtils.matchItemCounter(itemCounter, itemCounter2, false)) {
                     itemCounter.consume(itemCounter2);
-                    if (itemCounter.getStackNum() >= maxMatchCount) break;
+                    // noConsume 的输入只需要确认存在即可，找到一个匹配就够了
+                    if (isNoConsume || itemCounter.getStackNum() >= maxMatchCount) break;
                 }
             }
             // 不够一份的量
@@ -1231,6 +1242,8 @@ public class CraftUtils {
         int len = recipes.length;
         if (len != 0) {
             for (int i = 0; i < len; ++i) {
+                // noConsume 的输入不限制合成次数
+                if (recipes[i].isNoConsume()) continue;
                 limit = Math.min(limit, recipes[i].getStackNum());
             }
             return limit;

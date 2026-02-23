@@ -979,15 +979,48 @@ public class RecipeSupporter {
                 }
             }
             if (outputlist.isEmpty()) return null;
+
+            // 处理 noConsume: 读取不消耗的输入索引，传递给 StackMachineRecipe
+            Set<Integer> noConsumeSet = new HashSet<>();
+            try {
+                Object noConsumeObj = ReflectUtils.invokeGetRecursively(rsc, Settings.FIELD, "noConsume");
+                if (noConsumeObj == null) {
+                    noConsumeObj = ReflectUtils.invokeGetRecursively(rsc, Settings.METHOD, "getNoConsume");
+                }
+                if (noConsumeObj != null) {
+                    // 通过反射调用 size() 和 getInt(int) 读取 fastutil IntList
+                    try {
+                        java.lang.reflect.Method sizeMethod = noConsumeObj.getClass().getMethod("size");
+                        int size = (int) sizeMethod.invoke(noConsumeObj);
+                        java.lang.reflect.Method getIntMethod =
+                                noConsumeObj.getClass().getMethod("getInt", int.class);
+                        for (int idx = 0; idx < size; idx++) {
+                            noConsumeSet.add((int) getIntMethod.invoke(noConsumeObj, idx));
+                        }
+                    } catch (Throwable e1) {
+                        // fallback: 尝试 Iterable 方式
+                        if (noConsumeObj instanceof Iterable<?> noConsumeList) {
+                            for (Object idx : noConsumeList) {
+                                if (idx instanceof Number num) {
+                                    noConsumeSet.add(num.intValue());
+                                }
+                            }
+                        }
+                    }
+                }
+            } catch (Throwable ignored) {
+            }
+
             MachineRecipe result;
             boolean isRandStack = (Boolean) ReflectUtils.invokeGetRecursively(rsc, Settings.FIELD, "chooseOneIfHas");
+            ItemStack[] outputArr;
             if (isRandStack) {
                 ItemStack outputRand = AddUtils.eqRandItemStackFactory(outputlist);
-                result = MachineRecipeUtils.stackFrom(rsc.getTicks(), input, new ItemStack[] {outputRand});
+                outputArr = new ItemStack[] {outputRand};
             } else {
-                result = MachineRecipeUtils.stackFrom(
-                        rsc.getTicks(), input, outputlist.toArray(new ItemStack[outputlist.size()]));
+                outputArr = outputlist.toArray(new ItemStack[outputlist.size()]);
             }
+            result = MachineRecipeUtils.stackFrom(rsc.getTicks(), input, outputArr, noConsumeSet);
             return result;
         } catch (Throwable e) {
             Debug.debug("generate an exception while transfer rsc recipes %s"

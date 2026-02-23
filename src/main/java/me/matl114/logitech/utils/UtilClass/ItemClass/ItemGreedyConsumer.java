@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGreedyConsumer> {
     private long matchAmount;
     private List<ItemPusher> targetConsumers;
+    private boolean noConsume;
     private static ItemGreedyConsumer INSTANCE = new ItemGreedyConsumer(new ItemStack(Material.STONE));
 
     public ItemGreedyConsumer(ItemStack itemStack) {
@@ -50,6 +51,15 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
     public void init(ItemStack itemStack) {
         super.init(itemStack);
         this.matchAmount = 0;
+        this.noConsume = false;
+    }
+
+    public boolean isNoConsume() {
+        return noConsume;
+    }
+
+    public void setNoConsume(boolean noConsume) {
+        this.noConsume = noConsume;
     }
 
     public long maxStackSize() {
@@ -176,6 +186,10 @@ public class ItemGreedyConsumer extends ItemCounter implements Comparable<ItemGr
     public void updateItemsPlus(BlockMenu inv, Settings mod) {
         // preserver
         if (targetConsumers == null) {
+            return;
+        }
+        // noConsume 的输入不执行扣除
+        if (noConsume && mod == Settings.GRAB) {
             return;
         }
         long s = cnt;
