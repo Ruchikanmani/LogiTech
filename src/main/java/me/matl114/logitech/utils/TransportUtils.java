@@ -226,13 +226,13 @@ public class TransportUtils {
             transportItemEnsureLock(from, fromSlot, to, toSlot, configCode, smart, bwlist, flow, provider);
             // if (CargoConfigs.F)
         } else {
-            int[] toSlot = to_output
-                    ? to.getPreset().getSlotsAccessedByItemTransport(to, ItemTransportFlow.WITHDRAW, AIR)
-                    : to.getPreset().getSlotsAccessedByItemTransport(to, ItemTransportFlow.INSERT, AIR);
+            // 逆向传输: to 变为实际取物源, from 变为实际放物目标
+            // 复用 getSlotAccess 以正确处理 FROM_REVERSED/TO_REVERSED 配置
+            int[] toSlot = getSlotAccess(to, configCode, true, to_output, AIR);
+            int[] fromSlot = getSlotAccess(from, configCode, false, from_input, AIR);
             ItemTransportFlow flow = from_input ? ItemTransportFlow.INSERT : ItemTransportFlow.WITHDRAW;
-            int[] fromSlot = from.getPreset().getSlotsAccessedByItemTransport(from, flow, AIR);
             // 只有目标INSERT才需要
-            smart = smart && (CargoConfigs.FROM_REVERSED.getConfig(configCode) || flow == ItemTransportFlow.INSERT);
+            smart = smart && (CargoConfigs.TO_REVERSED.getConfig(configCode) || flow == ItemTransportFlow.INSERT);
             transportItemEnsureLock(to, toSlot, from, fromSlot, configCode, smart, bwlist, flow, provider);
         }
     }
