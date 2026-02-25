@@ -499,8 +499,21 @@ public class CraftUtils {
             }
         }
         if (effectiveCnt2 <= 0) {
-            // 所有输出都是空的（概率全部失败），仍然算合成成功，无需输出
-            // 直接设置stackNum并返回
+            // 所有输出都是空的（概率全部失败），本次无实际产出
+            // 但仍需检查输出槽是否有空间：如果输出槽全满，说明即使概率成功也放不下
+            // 此时不应消耗材料，否则会持续吞材料但永远无产出
+            boolean hasAvailableSlot = false;
+            for (int i = 0; i < len2; ++i) {
+                ItemPusher itemCounter = outputCounters.get(i);
+                if (itemCounter.getItem() == null || itemCounter.getAmountLong() < itemCounter.getMaxStackCnt()) {
+                    hasAvailableSlot = true;
+                    break;
+                }
+            }
+            if (!hasAvailableSlot) {
+                return null;
+            }
+            // 输出槽有空间，允许合成（本次概率全部落空，无产出但消耗输入）
             for (int i = 0; i < cnt2; ++i) {
                 recipeCounter2[i].setStackNum(maxAmount2);
             }
