@@ -485,28 +485,60 @@ public class CraftUtils {
         long maxAmount2 = limit;
         if (cnt2 <= 0 || maxAmount2 <= 0) {
             return null;
-        } // 优化 当一个输出的时候 直接输出 匹配最大的匹配数
+        }
+        // 预处理: 获取所有输出的 GreedyConsumer，并统计有效（非AIR/cnt>0）输出数目
+        // ProbItemStack 概率失败时 getInstance() 返回 AIR (cnt=0)，这些不需要输出槽
+        for (int i = 0; i < cnt2; ++i) {
+            recipeCounter2[i] = getGreedyConsumer(recipeOutput[i]);
+        }
+        // 统计实际需要输出槽的数量
+        int effectiveCnt2 = 0;
+        for (int i = 0; i < cnt2; ++i) {
+            if (recipeCounter2[i].getAmount() > 0) {
+                effectiveCnt2++;
+            }
+        }
+        if (effectiveCnt2 <= 0) {
+            // 所有输出都是空的（概率全部失败），仍然算合成成功，无需输出
+            // 直接设置stackNum并返回
+            for (int i = 0; i < cnt2; ++i) {
+                recipeCounter2[i].setStackNum(maxAmount2);
+            }
+            int cnt = inputInfo.length;
+            for (int i = 0; i < cnt; ++i) {
+                inputInfo[i].setStackNum(maxAmount2);
+            }
+            return recipeCounter2;
+        }
+        // 优化 当只有一个有效输出的时候 直接输出 匹配最大的匹配数
         // 99%的情况都是这样的
         // 应该不会有很多2b作者给这么高效的机器设置两个输出
-        else if (cnt2 == 1) {
-            recipeCounter2[0] = getGreedyConsumer(recipeOutput[0]);
-            for (int i = 0; i < len2; ++i) {
-                ItemPusher itemCounter = outputCounters.get(i);
-                if (itemCounter.getItem() == null) {
-                    itemCounter.setFrom(recipeCounter2[0]);
-                    recipeCounter2[0].addRelate(itemCounter);
-                    recipeCounter2[0].addMatchAmount(recipeCounter2[0].getMaxStackCnt());
-                } else if (itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
-                    continue;
-                } else if (CraftUtils.matchItemCounter(recipeCounter2[0], itemCounter, false)) {
-                    recipeCounter2[0].addRelate(itemCounter);
-                    recipeCounter2[0].addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmountLong());
-                }
-                if (recipeCounter2[0].getStackNum() >= maxAmount2) {
+        if (effectiveCnt2 == 1) {
+            // 找到那个唯一的有效输出
+            int effectiveIdx = -1;
+            for (int i = 0; i < cnt2; ++i) {
+                if (recipeCounter2[i].getAmount() > 0) {
+                    effectiveIdx = i;
                     break;
                 }
             }
-            maxAmount2 = Math.min(recipeCounter2[0].getStackNum(), maxAmount2);
+            for (int i = 0; i < len2; ++i) {
+                ItemPusher itemCounter = outputCounters.get(i);
+                if (itemCounter.getItem() == null) {
+                    itemCounter.setFrom(recipeCounter2[effectiveIdx]);
+                    recipeCounter2[effectiveIdx].addRelate(itemCounter);
+                    recipeCounter2[effectiveIdx].addMatchAmount(recipeCounter2[effectiveIdx].getMaxStackCnt());
+                } else if (itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
+                    continue;
+                } else if (CraftUtils.matchItemCounter(recipeCounter2[effectiveIdx], itemCounter, false)) {
+                    recipeCounter2[effectiveIdx].addRelate(itemCounter);
+                    recipeCounter2[effectiveIdx].addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmountLong());
+                }
+                if (recipeCounter2[effectiveIdx].getStackNum() >= maxAmount2) {
+                    break;
+                }
+            }
+            maxAmount2 = Math.min(recipeCounter2[effectiveIdx].getStackNum(), maxAmount2);
             if (maxAmount2 <= 0) {
                 return null;
             }
@@ -515,10 +547,12 @@ public class CraftUtils {
         // 有可能是桶或者什么
         else {
             // 维护一下当前matchAmount最小值
-            PriorityQueue<ItemGreedyConsumer> priorityRecipeOutput = new PriorityQueue<>(cnt2 + 1);
+            PriorityQueue<ItemGreedyConsumer> priorityRecipeOutput = new PriorityQueue<>(effectiveCnt2 + 1);
             for (int i = 0; i < cnt2; ++i) {
-                recipeCounter2[i] = getGreedyConsumer(recipeOutput[i]);
-                priorityRecipeOutput.add(recipeCounter2[i]);
+                // 跳过 cnt==0 的输出项(概率失败的AIR)，它们不需要输出槽
+                if (recipeCounter2[i].getAmount() > 0) {
+                    priorityRecipeOutput.add(recipeCounter2[i]);
+                }
             }
             while (true) {
                 ItemGreedyConsumer itemCounter2 = priorityRecipeOutput.poll();

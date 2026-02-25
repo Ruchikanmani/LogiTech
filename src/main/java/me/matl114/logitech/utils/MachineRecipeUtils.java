@@ -53,8 +53,13 @@ public class MachineRecipeUtils {
             __flag = false;
             for (ItemCounter stack : stacks) {
                 if (CraftUtils.matchItemStack(a, stack, true)) {
-                    stack.addAmount(a.getAmount());
-                    __flag = true;
+                    // 只在合并后不超过 maxStackSize 时才合并，防止产生超大堆叠
+                    long maxStack = stack.getItem() != null ? stack.getItem().getMaxStackSize() : 64;
+                    if (maxStack <= 0) maxStack = 64;
+                    if (stack.getAmount() + a.getAmount() <= maxStack) {
+                        stack.addAmount(a.getAmount());
+                        __flag = true;
+                    }
                     break;
                 }
             }
