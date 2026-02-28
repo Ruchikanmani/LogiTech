@@ -31,13 +31,11 @@ public class LocationStorageProxy extends ItemStorageCache {
         long delta = locationNowAmount - this.lastStorageAmount;
         long locationSetAmount = Math.min(getMaxStackCnt(), getStorageAmountLong() + delta);
         if (locationSetAmount < 0) {
-            // async catcher
-            //            Debug.logger("Catch Async Operation in cache Location :",location);
-            //            Debug.logger("Using Amount now:",locationNowAmount,"Amount Record:",lastStorageAmount,"now
-            // Amount:",getStorageAmount(),"Set value:",locationSetAmount);
+            locationSetAmount = 0;
         }
         ((LocationProxy) storageType).setAmount(location, locationSetAmount);
         ((LocationProxy) storageType).updateLocation(location);
+        this.lastStorageAmount = locationSetAmount;
     }
 
     public boolean isNotValid(){

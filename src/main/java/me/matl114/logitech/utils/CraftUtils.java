@@ -9,6 +9,7 @@ import me.matl114.logitech.manager.Schedules;
 import me.matl114.logitech.utils.Algorithms.DynamicArray;
 import me.matl114.logitech.utils.UtilClass.ItemClass.*;
 import me.matl114.logitech.utils.UtilClass.RecipeClass.StackMachineRecipe;
+import me.matl114.logitech.utils.UtilClass.StorageClass.ItemStorageCache;
 import me.matl114.matlib.utils.version.VersionedMeta;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
@@ -273,7 +274,7 @@ public class CraftUtils {
         int len2 = slotCounters.size();
         ItemStack[] recipeInput = recipe.getInput();
         int cnt = recipeInput.length;
-        if (cnt > len2) return null;
+        if (len2 <= 0) return null;
         ItemGreedyConsumer[] result = new ItemGreedyConsumer[cnt];
         // 获取 noConsume 标记
         Set<Integer> noConsumeIndices = Collections.emptySet();
@@ -285,36 +286,58 @@ public class CraftUtils {
         if (maxMatchCount == 0) {
             return null;
         }
-        // int maxAmount;
-        final boolean[] visited = new boolean[len2];
+        final long[] reservedAmount = new long[len2];
+        final boolean[] synced = new boolean[len2];
         for (int i = 0; i < cnt; ++i) {
             boolean isNoConsume = noConsumeIndices.contains(i);
             ItemGreedyConsumer itemCounter = getGreedyConsumer(recipeInput[i]);
             if (isNoConsume) {
                 itemCounter.setNoConsume(true);
             }
-            // in case some idiots! put 0 in recipe
-            // maxAmount=Math.min( itemCounter.getAmount()*maxMatchCount,1);
-            for (int j = 0; j < len2; ++j) {
+            long recipeCnt = itemCounter.getAmount();
+            long stillNeed = recipeCnt;
+            for (int j = 0; j < len2 && stillNeed > 0; ++j) {
                 ItemPusher itemCounter2 = slotCounters.get(j);
                 if (itemCounter2 == null) continue;
-                if (!visited[j]) {
+                if (!synced[j]) {
                     itemCounter2.syncData();
-                    visited[j] = true;
-                } else if (itemCounter2.isDirty()) {
-                    continue;
+                    synced[j] = true;
                 }
+                long available = itemCounter2.getAmountLong() - reservedAmount[j];
+                if (available <= 0) continue;
                 if (CraftUtils.matchItemCounter(itemCounter, itemCounter2, false)) {
-                    itemCounter.consume(itemCounter2);
-                    // noConsume 的输入只需要确认存在即可，找到一个匹配就够了
-                    if (isNoConsume || itemCounter.getStackNum() >= maxMatchCount) break;
+                    long take = Math.min(available, stillNeed);
+                    itemCounter.addMatchAmount(take);
+                    itemCounter.addRelate(itemCounter2);
+                    reservedAmount[j] += take;
+                    stillNeed -= take;
+                    if (isNoConsume) break;
                 }
             }
-            // 不够一份的量
             if (itemCounter.getStackNum() < 1) {
                 return null;
             }
             result[i] = itemCounter;
+        }
+        for (int i = 0; i < cnt; ++i) {
+            if (result[i].isNoConsume()) continue;
+            if (result[i].getStackNum() >= maxMatchCount) continue;
+            ItemGreedyConsumer itemCounter = result[i];
+            for (int j = 0; j < len2; ++j) {
+                ItemPusher itemCounter2 = slotCounters.get(j);
+                if (itemCounter2 == null) continue;
+                long available = itemCounter2.getAmountLong() - reservedAmount[j];
+                if (available <= 0) continue;
+                if (CraftUtils.matchItemCounter(itemCounter, itemCounter2, false)) {
+                    long neededTotal = (long)(maxMatchCount - itemCounter.getStackNum()) * itemCounter.getAmount();
+                    if (neededTotal <= 0) break;
+                    long consumeAmount = Math.min(available, neededTotal);
+                    itemCounter.addMatchAmount(consumeAmount);
+                    itemCounter.addRelate(itemCounter2);
+                    reservedAmount[j] += consumeAmount;
+                    if (itemCounter.getStackNum() >= maxMatchCount) break;
+                }
+            }
         }
         return result;
     }
@@ -348,7 +371,14 @@ public class CraftUtils {
                     result[i].addRelate(itemCounter2);
 
                 } else if (itemCounter2.isDirty()) {
-                    continue;
+                    if (itemCounter2 instanceof ItemStorageCache
+                            && itemCounter2.getAmountLong() < itemCounter2.getMaxStackCnt()
+                            && CraftUtils.matchItemCounter(itemCounter2, result[i], false)) {
+                        itemCounter2.grab(result[i]);
+                        result[i].addRelate(itemCounter2);
+                    } else {
+                        continue;
+                    }
                 } else if (CraftUtils.matchItemCounter(itemCounter2, result[i], false)) {
                     itemCounter2.grab(result[i]);
                     result[i].addRelate(itemCounter2);
@@ -583,6 +613,14 @@ public class CraftUtils {
                         hasNextPushSlot = true;
                         break;
                     } else if (itemCounter.isDirty() || itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
+                        if (itemCounter.isDirty() && itemCounter instanceof ItemStorageCache
+                                && itemCounter.getAmountLong() < itemCounter.getMaxStackCnt()
+                                && CraftUtils.matchItemCounter(itemCounter2, itemCounter, false)) {
+                            itemCounter2.addRelate(itemCounter);
+                            itemCounter2.addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmountLong());
+                            hasNextPushSlot = true;
+                            break;
+                        }
                         continue;
                     } else if (CraftUtils.matchItemCounter(itemCounter2, itemCounter, false)) {
                         // what the fuck????
@@ -686,6 +724,14 @@ public class CraftUtils {
                 for (int j = 0; j < len2; ++j) {
                     ItemPusher itemCounter = output[j];
                     if (itemCounter.isDirty() || itemCounter.getMaxStackCnt() <= itemCounter.getAmountLong()) {
+                        if (itemCounter.isDirty() && itemCounter instanceof ItemStorageCache
+                                && itemCounter.getAmountLong() < itemCounter.getMaxStackCnt()
+                                && CraftUtils.matchItemCounter(itemCounter2, itemCounter, false)) {
+                            itemCounter2.addRelate(itemCounter);
+                            itemCounter2.addMatchAmount(itemCounter.getMaxStackCnt() - itemCounter.getAmountLong());
+                            hasNextPushSlot = true;
+                            break;
+                        }
                         continue;
                     } else if (CraftUtils.matchItemCounter(itemCounter2, itemCounter, false)) {
                         itemCounter2.addRelate(itemCounter);
@@ -811,6 +857,12 @@ public class CraftUtils {
                             itemCounter.setDirty(true);
                             hasChanged = true;
                         }
+                    } else if (itemCounter instanceof ItemStorageCache
+                            && itemCounter.getAmountLong() < itemCounter.getMaxStackCnt()
+                            && matchItemCounter(outputItem, itemCounter, false)) {
+                        itemCounter.grab(outputItem);
+                        itemCounter.updateMenu(inv);
+                        hasChanged = true;
                     }
                 }
                 if (outputItem.getAmount() <= 0) break;
@@ -905,6 +957,12 @@ public class CraftUtils {
                             itp.setDirty(true);
                             hasChanged = true;
                         }
+                    } else if (itp instanceof ItemStorageCache
+                            && itp.getAmountLong() < itp.getMaxStackCnt()
+                            && matchItemCounter(outputItem, itp, false)) {
+                        outputItem.push(itp);
+                        itp.updateMenu(inv);
+                        hasChanged = true;
                     }
                 }
                 if (outputItem.getMatchAmount() <= 0) break;
