@@ -3,6 +3,9 @@ package me.matl114.logitech.utils;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import me.matl114.logitech.core.AddSlimefunItems;
@@ -67,16 +70,10 @@ public class BukkitUtils {
         } else if (craftingType == SmithingTransformRecipe.class) {
             sendSmithRecipeToVanilla(AddUtils.getNameKey(uniqueId + "_vl"), in, out, false);
         }
-        //        else{
-        //            throw new IllegalArgumentException("Invalid recipe class: "+craftingType);
-        //        }
-
     }
 
     private static final PairList<SlimefunItem, Class<?>> moreVanillaRecipes = new PairList<>();
-    //    public static void registerMoreVanillaRecipeTypes(SlimefunItem recipeItem,Class<?> clazz) {
-    //        moreVanillaRecipes.put(recipeItem,clazz);
-    //    }
+
     public static void setup() {
         addMoreRecipes();
     }
@@ -85,38 +82,127 @@ public class BukkitUtils {
         sendRecipeToVanilla(AddSlimefunItems.CRAFT_MANUAL, ShapedRecipe.class);
         sendRecipeToVanilla(AddSlimefunItems.ENHANCED_CRAFT_MANUAL, ShapedRecipe.class);
         sendRecipeToVanilla(AddSlimefunItems.MAGIC_WORKBENCH_MANUAL, ShapedRecipe.class);
-        moreVanillaRecipes.forEach(pair -> sendRecipeToVanilla(pair.getFirstValue(), pair.getSecondValue()));
+        moreVanillaRecipes.forEach(pair -> {
+            sendRecipeToVanilla(pair.getFirstValue(), pair.getSecondValue());
+        });
+    }
+
+    private static final HashMap<NamespacedKey, ItemStack[]> vanillaRecipeOriginalInputs = new HashMap<>();
+    private static final HashMap<NamespacedKey, ItemStack> vanillaRecipeOriginalOutputs = new HashMap<>();
+    private static final List<NamespacedKey> registeredRecipeKeys = new ArrayList<>();
+
+    public static ItemStack[] getOriginalRecipeInput(NamespacedKey key) {
+        return vanillaRecipeOriginalInputs.get(key);
+    }
+
+    public static ItemStack getOriginalRecipeOutput(NamespacedKey key) {
+        return vanillaRecipeOriginalOutputs.get(key);
+    }
+
+    public static List<NamespacedKey> getRegisteredRecipeKeys() {
+        return registeredRecipeKeys;
+    }
+
+    public static NamespacedKey matchRecipeManually(ItemStack[] matrix) {
+        for (NamespacedKey key : registeredRecipeKeys) {
+            ItemStack[] pattern = vanillaRecipeOriginalInputs.get(key);
+            if (pattern == null) continue;
+            if (matchesPattern(matrix, pattern)) {
+                return key;
+            }
+        }
+        return null;
+    }
+
+    private static boolean matchesPattern(ItemStack[] matrix, ItemStack[] pattern) {
+        if (matrix == null) return false;
+        int len = Math.min(9, Math.min(matrix.length, pattern.length));
+        for (int i = 0; i < len; i++) {
+            ItemStack expected = (i < pattern.length) ? pattern[i] : null;
+            ItemStack actual = (i < matrix.length) ? matrix[i] : null;
+
+            boolean expectedEmpty = (expected == null || expected.getType().isAir());
+            boolean actualEmpty = (actual == null || actual.getType().isAir());
+
+            if (expectedEmpty && actualEmpty) {
+                continue;
+            }
+            if (expectedEmpty != actualEmpty) {
+                return false;
+            }
+            if (expected.getType() != actual.getType()) {
+                return false;
+            }
+            SlimefunItem expectedSf = SlimefunItem.getByItem(expected);
+            if (expectedSf != null) {
+                SlimefunItem actualSf = SlimefunItem.getByItem(actual);
+                if (actualSf == null || !expectedSf.getId().equals(actualSf.getId())) {
+                    return false;
+                }
+            }
+        }
+        for (int i = len; i < matrix.length && i < 9; i++) {
+            ItemStack actual = matrix[i];
+            if (actual != null && !actual.getType().isAir()) {
+                return false;
+            }
+        }
+        for (int i = len; i < pattern.length && i < 9; i++) {
+            ItemStack expected = pattern[i];
+            if (expected != null && !expected.getType().isAir()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void sendShapedRecipeToVanilla(NamespacedKey key, ItemStack[] input, ItemStack output) {
         if (input.length > 9) {
-            Debug.logger("this recipe can not be sent to Crafting Table: ", key.toString());
             return;
         }
-        RecipeChoice[] inputChoice = new RecipeChoice[9];
-        for (int i = 0; i < input.length; i++) {
-            inputChoice[i] = input[i] == null ? null : new RecipeChoice.ExactChoice(input[i]);
-        }
-        ShapedRecipe vanillaRecipe = new ShapedRecipe(key, output);
-        String[] pattern = new String[3];
-        for (int i = 0; i < 3; i++) {
-            StringBuilder builder = new StringBuilder();
-            for (int j = 0; j < 3; j++) {
-                builder.append(
-                        inputChoice[3 * i + j] == null
-                                ? " "
-                                : String.valueOf(3 * i + j).charAt(0));
-            }
-            pattern[i] = builder.toString();
-        }
-        vanillaRecipe.shape(pattern);
-        for (int i = 0; i < 9; i++) {
-            if (inputChoice[i] != null) {
-                vanillaRecipe.setIngredient(String.valueOf(i).charAt(0), inputChoice[i]);
-            }
+        vanillaRecipeOriginalInputs.put(key, input.clone());
+        vanillaRecipeOriginalOutputs.put(key, output.clone());
+        if (!registeredRecipeKeys.contains(key)) {
+            registeredRecipeKeys.add(key);
         }
 
-        Bukkit.addRecipe(vanillaRecipe);
+        try {
+            ItemStack cleanOutput = new ItemStack(output.getType(), output.getAmount());
+
+                HashMap<Material, Character> materialCharMap = new HashMap<>();
+                char nextChar = 'A';
+                char[] slotChars = new char[9];
+
+                for (int i = 0; i < 9; i++) {
+                    if (i < input.length && input[i] != null && !input[i].getType().isAir()) {
+                        Material mat = input[i].getType();
+                        if (!materialCharMap.containsKey(mat)) {
+                            materialCharMap.put(mat, nextChar);
+                            nextChar++;
+                        }
+                        slotChars[i] = materialCharMap.get(mat);
+                    } else {
+                        slotChars[i] = ' ';
+                    }
+                }
+
+                String[] pattern = new String[3];
+                for (int i = 0; i < 3; i++) {
+                    pattern[i] = new String(new char[]{slotChars[3 * i], slotChars[3 * i + 1], slotChars[3 * i + 2]});
+                }
+
+                Bukkit.removeRecipe(key);
+
+                ShapedRecipe vanillaRecipe = new ShapedRecipe(key, cleanOutput);
+                vanillaRecipe.shape(pattern);
+
+                for (var entry : materialCharMap.entrySet()) {
+                    vanillaRecipe.setIngredient(entry.getValue(), new RecipeChoice.MaterialChoice(entry.getKey()));
+                }
+
+                Bukkit.addRecipe(vanillaRecipe);
+        } catch (Throwable ignored) {
+        }
     }
 
     public static void sendSmithRecipeToVanilla(
